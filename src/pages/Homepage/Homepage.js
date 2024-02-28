@@ -32,9 +32,11 @@ const HomePage = () => {
                             <CardTitle tag="h5"
                             style={{
                                 backgroundColor:"#F2F8FF",
-                                border: 1,
+                                border: 5,
                                 borderRadius: 7,
                                 padding: '30%',
+                                boxShadow: 'rgba(17, 12, 46, 0.15) 0px 48px 100px 0px'
+                                
                                 
                             }}>
                             <img
@@ -49,6 +51,7 @@ const HomePage = () => {
                                 color: 'black',
                                 border: 0,
                                 boxShadow: 'none',
+                                fontWeight: '600'
                             }}>
                                 Cash Expense
                             </Button>
@@ -61,14 +64,17 @@ const HomePage = () => {
                                 color: 'black',
                                 border: 0,
                                 boxShadow: 'none',
+                                fontWeight: '600'
                                 
                             }}>
                             <CardTitle tag="h5"
                             style={{
                                 backgroundColor:"#F2F8FF",
-                                border: 1,
+                                border: 5,
                                 borderRadius: 7,
                                 padding: '30%',
+                                boxShadow: 'rgba(17, 12, 46, 0.15) 0px 48px 100px 0px',
+                                
                                 
                             }}>
                             <img
@@ -83,6 +89,7 @@ const HomePage = () => {
                                 color: 'black',
                                 border: 0,
                                 boxShadow: 'none',
+                                fontWeight: '600'
                             }}>
                                 Bank Expense
                             </Button>
@@ -95,13 +102,16 @@ const HomePage = () => {
                                 color: 'black',
                                 border: 0,
                                 boxShadow: 'none',
+                                fontWeight: '600'
                             }}>
                             <CardTitle tag="h5"
                             style={{
                                 backgroundColor:"#F6F2FF",
-                                border: 1,
+                                border: 5,
                                 borderRadius: 7,
                                 padding: '30%',
+                                boxShadow: 'rgba(17, 12, 46, 0.15) 0px 48px 100px 0px',
+                                
                                 
                             }}>
                             <img
@@ -116,6 +126,7 @@ const HomePage = () => {
                                 color: 'black',
                                 border: 0,
                                 boxShadow: 'none',
+                                fontWeight: '600'
                             }}>
                                 Receipt
                             </Button>
@@ -128,13 +139,16 @@ const HomePage = () => {
                                 color: 'black',
                                 border: 0,
                                 boxShadow: 'none',
+                                fontWeight: '600'
                             }}>
                             <CardTitle tag="h5"
                             style={{
                                 backgroundColor:"#F4FCFB",
-                                border: 1,
+                                border: 5,
                                 borderRadius: 7,
                                 padding: '30%',
+                                boxShadow: 'rgba(17, 12, 46, 0.15) 0px 48px 100px 0px',
+                                
                                 
                             }}>
                             <img
@@ -149,6 +163,7 @@ const HomePage = () => {
                                 color: 'black',
                                 border: 0,
                                 boxShadow: 'none',
+                                fontWeight: '600'
                             }}>
                                 Other
                             </Button>
@@ -161,13 +176,16 @@ const HomePage = () => {
                                 color: 'black',
                                 border: 0,
                                 boxShadow: 'none',
+                                fontWeight: '600'
                             }}>
                             <CardTitle tag="h5"
                             style={{
                                 backgroundColor:"#FFF9F2",
-                                border: 1,
+                                border: 5,
                                 borderRadius: 7,
                                 padding: '30%',
+                                boxShadow: 'rgba(17, 12, 46, 0.15) 0px 48px 100px 0px',
+                                
                                 
                             }}>
                             <img
@@ -183,6 +201,7 @@ const HomePage = () => {
                                 color: 'black',
                                 border: 0,
                                 boxShadow: 'none',
+                                fontWeight: '600'
                             }}>
                                 Views
                             </Button>
@@ -195,13 +214,16 @@ const HomePage = () => {
                                 color: 'black',
                                 border: 0,
                                 boxShadow: 'none',
+                                fontWeight: '600'
                             }}>
                             <CardTitle tag="h5"
                             style={{
                                 backgroundColor:"#F2F8FF",
-                                border: 1,
+                                border: 5,
                                 borderRadius: 7,
                                 padding: '30%',
+                                boxShadow: 'rgba(17, 12, 46, 0.15) 0px 48px 100px 0px',
+                                
                                 
                             }}>
                             <img
@@ -216,6 +238,7 @@ const HomePage = () => {
                                 color: 'black',
                                 border: 0,
                                 boxShadow: 'none',
+                                fontWeight: '600'
                             }}>
                                 Create Voucher
                             </Button>

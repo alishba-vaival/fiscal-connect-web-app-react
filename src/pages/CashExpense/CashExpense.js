@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Col,
   Container,
@@ -8,13 +8,51 @@ import {
   FormGroup,
   Button,
   Form,
+  CardBody,
+  CardHeader,
+  Card,
 } from "reactstrap";
-
-import Flatpickr from "react-flatpickr";
+import Dropzone from "react-dropzone";
+import { Link } from "react-router-dom";
 import BreadCrumb from "../../Components/Common/BreadCrumb";
+import { FilePond, registerPlugin } from "react-filepond";
+// Import FilePond styles
+import "filepond/dist/filepond.min.css";
+import FilePondPluginImageExifOrientation from "filepond-plugin-image-exif-orientation";
+import FilePondPluginImagePreview from "filepond-plugin-image-preview";
+import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css";
+
+// Register the plugins
+registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
 
 const CashExpense = () => {
   document.title = "CRM | Vaival Solutions";
+
+  const [selectedFiles, setselectedFiles] = useState([]);
+  const [files, setFiles] = useState([]);
+
+  function handleAcceptedFiles(files) {
+    files.map((file) =>
+      Object.assign(file, {
+        preview: URL.createObjectURL(file),
+        formattedSize: formatBytes(file.size),
+      })
+    );
+    setselectedFiles(files);
+  }
+
+  /**
+   * Formats the size
+   */
+  function formatBytes(bytes, decimals = 2) {
+    if (bytes === 0) return "0 Bytes";
+    const k = 1024;
+    const dm = decimals < 0 ? 0 : decimals;
+    const sizes = ["Bytes", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"];
+
+    const i = Math.floor(Math.log(bytes) / Math.log(k));
+    return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + " " + sizes[i];
+  }
   return (
     <React.Fragment>
       <div className="page-content">
@@ -22,7 +60,7 @@ const CashExpense = () => {
           <BreadCrumb title="CashExpense" pageTitle="CashExpensePage" />
           <Row>
             <Col xs={12}></Col>
-            <Container
+            <Card
               fluid
               style={{
                 backgroundColor: "white",
@@ -118,7 +156,34 @@ const CashExpense = () => {
                 </FormGroup>
                 <Button>Sign in</Button>
               </Form>
-            </Container>
+            </Card>
+          </Row>
+          <Row className="mt-4">
+            <Col lg={12}>
+              <Row>
+                <Col lg={12}>
+                  <Card>
+                    <CardHeader>
+                      <h4 className="card-title mb-6">Attachment File</h4>
+                    </CardHeader>
+
+                    <CardBody>
+                      <p className="text-muted">
+                        
+                      </p>
+                      <FilePond
+                        files={files}
+                        onupdatefiles={setFiles}
+                        allowMultiple={true}
+                        maxFiles={6}
+                        name="files"
+                        className="filepond filepond-input-multiple"
+                      />
+                    </CardBody>
+                  </Card>
+                </Col>
+              </Row>
+            </Col>
           </Row>
         </Container>
       </div>
