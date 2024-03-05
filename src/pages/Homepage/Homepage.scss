@@ -1,0 +1,43 @@
+.homeContainer{
+    margin: 0 10% 0 10%;
+}
+.cardHome{
+    background: transparent;
+    color: black;
+    border: 0;
+    box-shadow: none;
+                            
+}
+.cardTitleHome
+{
+    border: 5;
+    border-radius: 20px;
+    padding: 30%;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+.btnHome
+{
+        background: transparent;
+        color: black;
+        border: 0;
+        box-shadow: none;
+        font-weight: 600;
+                            
+}
+.btnHome:hover
+{
+    background: transparent;
+    color: #00CCCC;                            
+}
+.btnHome:focus:active
+{
+    background: transparent;
+    color: #00CCCC;
+                            
+}
+.card:hover
+{
+    transition: all .3s ease-in-out;
+    transform : translateY(-5px);
+                            
+}

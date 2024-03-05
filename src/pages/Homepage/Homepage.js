@@ -26,9 +26,10 @@ const HomePage = () => {
       <div className="page-content">
           <BreadCrumb title="Homepage" pageTitle="Homepage" />
         <Container fluid className="homeContainer">
+        
           <Row>
             {/* <Col xs={12}></Col> */}
-            <Col md="3">
+            <Col md="2">
               <Card body className="cardHome">
                 <CardTitle tag="h5" className="cardTitleHome"
                   style={{
@@ -40,7 +41,7 @@ const HomePage = () => {
                 <Button className="btnHome">Cash Expense</Button>
               </Card>
             </Col>
-            <Col md="3">
+            <Col md="2">
               <Card body className="cardHome">
                 <CardTitle tag="h5" className="cardTitleHome"
                   style={{
@@ -51,7 +52,7 @@ const HomePage = () => {
                 <Button className="btnHome">Bank Expense</Button>
               </Card>
             </Col>
-            <Col md="3">
+            <Col md="2">
               <Card body className="cardHome">
                 <CardTitle tag="h5" className="cardTitleHome"
                 style={{
@@ -63,7 +64,7 @@ const HomePage = () => {
                 <Button className="btnHome">Receipt</Button>
               </Card>
             </Col>
-            <Col md="3">
+            <Col md="2">
               <Card body className="cardHome">
                 <CardTitle tag="h5" className="cardTitleHome"
                   style={{
@@ -77,7 +78,7 @@ const HomePage = () => {
             </Col>
             </Row>
             <Row>
-            <Col md="3">
+            <Col md="2">
               <Card body className="cardHome">
                 <CardTitle tag="h5"className="cardTitleHome"
                   style={{
@@ -89,7 +90,7 @@ const HomePage = () => {
                 <Button className="btnHome">Views</Button>
               </Card>
             </Col>
-            <Col md="3">
+            <Col md="2">
               <Card body className="cardHome">
                 <CardTitle tag="h5" className="cardTitleHome"
                   style={{
