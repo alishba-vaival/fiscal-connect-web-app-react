@@ -12,8 +12,12 @@ import {
   CardHeader,
   Card,
 } from "reactstrap";
-import Dropzone from "react-dropzone";
+import { FaCheck } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import attachment from "../../assets/images/figma/attachment.svg";
+import upload from "../../assets/images/figma/upload.svg";
+
+import Flatpickr from "react-flatpickr";
 import BreadCrumb from "../../Components/Common/BreadCrumb";
 import { FilePond, registerPlugin } from "react-filepond";
 // Import FilePond styles
@@ -21,6 +25,7 @@ import "filepond/dist/filepond.min.css";
 import FilePondPluginImageExifOrientation from "filepond-plugin-image-exif-orientation";
 import FilePondPluginImagePreview from "filepond-plugin-image-preview";
 import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css";
+import { useFormik } from "formik";
 
 // Register the plugins
 registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
@@ -42,6 +47,21 @@ const CashExpense = () => {
   }
 
   /**
+   * Formik
+   */
+
+  const formik = useFormik ({
+    initialValues: {
+      email: "",
+      password: "",
+      selectedFiles: null,
+    },
+    onSubmit: (values) => {
+      setFiles(values.selectedFiles);
+    },
+  });
+
+  /**
    * Formats the size
    */
   function formatBytes(bytes, decimals = 2) {
@@ -56,8 +76,8 @@ const CashExpense = () => {
   return (
     <React.Fragment>
       <div className="page-content">
+        
         <Container fluid>
-          <BreadCrumb title="CashExpense" pageTitle="CashExpensePage" />
           <Row>
             <Col xs={12}></Col>
             <Card
@@ -69,6 +89,27 @@ const CashExpense = () => {
               }}
             >
               <Form>
+              <BreadCrumb title="CashExpense" pageTitle="CashExpensePage" />
+                <Row>
+                  <Col md={3} 
+                  style={{
+                    float: "left",
+                  }}>
+                    <FormGroup>
+                      <Label for="exampleEmail">Financial Year</Label>
+                      <select
+                        className="form-select form-select-md"
+                        aria-label=".form-select-md example"
+                        required
+                      >
+                        <option selected>2020-2021</option>
+                        <option defaultValue="1">2021-2022</option>
+                        <option defaultValue="2">2023-2024</option>
+                        <option defaultValue="3">2024-2025</option>
+                      </select>
+                    </FormGroup>
+                  </Col>
+                </Row>
                 <Row>
                   <Col md={3}>
                     <FormGroup>
@@ -100,61 +141,157 @@ const CashExpense = () => {
                       </select>
                     </FormGroup>
                   </Col>
-                  <Col md={6}>
+                  <Col md={3}>
                     <FormGroup>
-                      <Label for="examplePassword">Password</Label>
+                      <Label for="exampleEmail">Date</Label>
+                      <Flatpickr
+                        className="form-control"
+                        id="datepicker-publish-input"
+                        placeholder="Select date"
+                        options={{
+                          altInput: true,
+                          altFormat: "F j, Y",
+                          mode: "multiple",
+                          dateFormat: "d.m.y",
+                        }}
+                      />
+                    </FormGroup>
+                  </Col>
+
+                  <Col md={5}>
+                    <FormGroup>
+                      <Label for="selectexpenseAccount">Select Expense Account</Label>
+                      <select
+                        className="form-select form-select-md"
+                        aria-label=".form-select-md example"
+                        required
+                      >
+                        <option selected>
+                          100-02-06-001 (Inventery Consumed)
+                        </option>
+                        <option defaultValue="1">
+                          100-02-06-002 (Amount Consumed)
+                        </option>
+                        <option defaultValue="2">
+                          100-02-06-003 (Expense Consumed)
+                        </option>
+                        <option defaultValue="3">
+                          100-02-06-004 (Stock Consumed)
+                        </option>
+                      </select>
+                    </FormGroup>
+                  </Col>
+                  <Col md={3}>
+                    <FormGroup>
+                      <Label for="amount">Amount</Label>
                       <Input
-                        id="examplePassword"
-                        name="password"
-                        placeholder="password placeholder"
-                        type="password"
+                        id="amount"
+                        name="amount"
+                        placeholder="Enter Amount"
                       />
                     </FormGroup>
                   </Col>
                 </Row>
-                <FormGroup>
-                  <Label for="exampleAddress">Address</Label>
-                  <Input
-                    id="exampleAddress"
-                    name="address"
-                    placeholder="1234 Main St"
-                  />
-                </FormGroup>
-                <FormGroup>
-                  <Label for="exampleAddress2">Address 2</Label>
-                  <Input
-                    id="exampleAddress2"
-                    name="address2"
-                    placeholder="Apartment, studio, or floor"
-                  />
-                </FormGroup>
                 <Row>
-                  <Col md={6}>
+                  <Col md={5}>
                     <FormGroup>
-                      <Label for="exampleCity">City</Label>
-                      <Input id="exampleCity" name="city" />
+                      <Label for="taxAccount">Tax Account</Label>
+                      <select
+                        className="form-select form-select-md"
+                        aria-label=".form-select-md example"
+                        required
+                      >
+                        <option selected>[100-02-06-001] Cash in Hand</option>
+                        <option defaultValue="1">
+                          [100-02-06-002] Cash in Bank
+                        </option>
+                        <option defaultValue="2">
+                          [100-02-06-003] Cash in House
+                        </option>
+                        <option defaultValue="3">
+                          [100-02-06-004] No Cash
+                        </option>
+                      </select>
+                    </FormGroup>
+                  </Col>
+                  <Col md={3}>
+                    <FormGroup>
+                      <Label for="taxAmount">Tax Amount</Label>
+                      <Input
+                        id="taxAmount"
+                        name="taxAmount"
+                        placeholder="Enter Tax Amount"
+                      />
+                    </FormGroup>
+                  </Col>
+                  <Col md={3}>
+                    <FormGroup>
+                      <Label for="netAmount">Net Amount</Label>
+                      <Input
+                        id="netAmount"
+                        name="netAmount"
+                        placeholder="xx xxx xxx xxxx"
+                      />
+                    </FormGroup>
+                  </Col>
+                </Row>
+
+                <Row>
+                  <Col md={7}>
+                    <FormGroup>
+                      <Label for="remarks">Remarks</Label>
+                      <Input
+                        id="remarks *"
+                        name="remarks *"
+                        placeholder="Enter Remarks"
+                      />
                     </FormGroup>
                   </Col>
                   <Col md={4}>
                     <FormGroup>
-                      <Label for="exampleState">State</Label>
-                      <Input id="exampleState" name="state" />
-                    </FormGroup>
-                  </Col>
-                  <Col md={2}>
-                    <FormGroup>
-                      <Label for="exampleZip">Zip</Label>
-                      <Input id="exampleZip" name="zip" />
+                      <Label for="cheque">Cheque No</Label>
+                      <Input
+                        id="cheque"
+                        name="cheque"
+                        placeholder="Enter Cheque"
+                      />
                     </FormGroup>
                   </Col>
                 </Row>
-                <FormGroup check>
-                  <Input id="exampleCheck" name="check" type="checkbox" />
-                  <Label check for="exampleCheck">
-                    Check me out
-                  </Label>
-                </FormGroup>
-                <Button>Sign in</Button>
+                <Button
+                  style={{
+                    float: "right",
+                    background: "transparent",
+                    color: "#0A85FF",
+                    borderRadius: "50px",
+                    padding: "5px 23px",
+                    border: "1px solid #00CCCC",
+                  }}
+                >
+                  Save <FaCheck />
+                </Button>
+                <Button
+                  style={{
+                    float: "right",
+                    background: "transparent",
+                    borderRadius: "50px",
+                    padding: "5px 23px",
+                    border: "1px solid #00CCCC",
+                  }}
+                >
+                  <img src={upload} alt="uploadIcon" />
+                </Button>
+                <Button
+                  style={{
+                    float: "right",
+                    background: "transparent",
+                    borderRadius: "50px",
+                    padding: "5px 23px",
+                    border: "1px solid #00CCCC",
+                  }}
+                >
+                  <img src={attachment} alt="attachmentIcon" />
+                </Button>
               </Form>
             </Card>
           </Row>
@@ -168,9 +305,7 @@ const CashExpense = () => {
                     </CardHeader>
 
                     <CardBody>
-                      <p className="text-muted">
-                        
-                      </p>
+                      <p className="text-muted"></p>
                       <FilePond
                         files={files}
                         onupdatefiles={setFiles}
