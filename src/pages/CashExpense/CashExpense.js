@@ -13,7 +13,6 @@ import {
   Card,
 } from "reactstrap";
 import { FaCheck } from "react-icons/fa";
-import { Link } from "react-router-dom";
 import attachment from "../../assets/images/figma/attachment.svg";
 import upload from "../../assets/images/figma/upload.svg";
 
@@ -25,13 +24,13 @@ import "filepond/dist/filepond.min.css";
 import FilePondPluginImageExifOrientation from "filepond-plugin-image-exif-orientation";
 import FilePondPluginImagePreview from "filepond-plugin-image-preview";
 import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css";
-import { useFormik } from "formik";
+// import { useFormik } from "formik";
 
 // Register the plugins
 registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
 
 const CashExpense = () => {
-  document.title = "CRM | Vaival Solutions";
+  document.title = "Fiscal Connect | Vaival Solutions";
 
   const [selectedFiles, setselectedFiles] = useState([]);
   const [files, setFiles] = useState([]);
@@ -50,16 +49,16 @@ const CashExpense = () => {
    * Formik
    */
 
-  const formik = useFormik ({
-    initialValues: {
-      email: "",
-      password: "",
-      selectedFiles: null,
-    },
-    onSubmit: (values) => {
-      setFiles(values.selectedFiles);
-    },
-  });
+  // const formik = useFormik ({
+  //   initialValues: {
+  //     email: "",
+  //     password: "",
+  //     selectedFiles: null,
+  //   },
+  //   onSubmit: (values) => {
+  //     setFiles(values.selectedFiles);
+  //   },
+  // });
 
   /**
    * Formats the size
@@ -93,10 +92,10 @@ const CashExpense = () => {
                 <Row>
                   <Col md={3} 
                   style={{
-                    float: "left",
+                    marginLeft: "55rem",
                   }}>
                     <FormGroup>
-                      <Label for="exampleEmail">Financial Year</Label>
+                      <Label for="financialYearCashExpense">Financial Year</Label>
                       <select
                         className="form-select form-select-md"
                         aria-label=".form-select-md example"
@@ -113,7 +112,7 @@ const CashExpense = () => {
                 <Row>
                   <Col md={3}>
                     <FormGroup>
-                      <Label for="exampleEmail">Site Name</Label>
+                      <Label for="siteNameCashExpense">Site Name</Label>
                       <select
                         className="form-select form-select-md"
                         aria-label=".form-select-md example"
@@ -128,7 +127,7 @@ const CashExpense = () => {
                   </Col>
                   <Col md={3}>
                     <FormGroup>
-                      <Label for="exampleEmail">Class</Label>
+                      <Label for="classCashExpense">Class</Label>
                       <select
                         className="form-select form-select-md"
                         aria-label=".form-select-md example"
@@ -143,16 +142,14 @@ const CashExpense = () => {
                   </Col>
                   <Col md={3}>
                     <FormGroup>
-                      <Label for="exampleEmail">Date</Label>
+                      <Label for="dateCashExpense">Date</Label>
                       <Flatpickr
                         className="form-control"
                         id="datepicker-publish-input"
                         placeholder="Select date"
                         options={{
-                          altInput: true,
-                          altFormat: "F j, Y",
-                          mode: "multiple",
-                          dateFormat: "d.m.y",
+                          dateFormat: "d-m-Y",
+                          defaultDate: ["2022-01-20"],
                         }}
                       />
                     </FormGroup>
@@ -160,7 +157,7 @@ const CashExpense = () => {
 
                   <Col md={5}>
                     <FormGroup>
-                      <Label for="selectexpenseAccount">Select Expense Account</Label>
+                      <Label for="selectExpenseAccount">Select Expense Account</Label>
                       <select
                         className="form-select form-select-md"
                         aria-label=".form-select-md example"
@@ -183,7 +180,7 @@ const CashExpense = () => {
                   </Col>
                   <Col md={3}>
                     <FormGroup>
-                      <Label for="amount">Amount</Label>
+                      <Label for="amountCashExpense">Amount</Label>
                       <Input
                         id="amount"
                         name="amount"
@@ -195,7 +192,7 @@ const CashExpense = () => {
                 <Row>
                   <Col md={5}>
                     <FormGroup>
-                      <Label for="taxAccount">Tax Account</Label>
+                      <Label for="taxAccountCashExpense">Tax Account</Label>
                       <select
                         className="form-select form-select-md"
                         aria-label=".form-select-md example"
@@ -216,7 +213,7 @@ const CashExpense = () => {
                   </Col>
                   <Col md={3}>
                     <FormGroup>
-                      <Label for="taxAmount">Tax Amount</Label>
+                      <Label for="taxAmountCashExpense">Tax Amount</Label>
                       <Input
                         id="taxAmount"
                         name="taxAmount"
@@ -226,7 +223,7 @@ const CashExpense = () => {
                   </Col>
                   <Col md={3}>
                     <FormGroup>
-                      <Label for="netAmount">Net Amount</Label>
+                      <Label for="netAmountCashExpense">Net Amount</Label>
                       <Input
                         id="netAmount"
                         name="netAmount"
@@ -237,23 +234,13 @@ const CashExpense = () => {
                 </Row>
 
                 <Row>
-                  <Col md={7}>
+                  <Col md={3}>
                     <FormGroup>
-                      <Label for="remarks">Remarks</Label>
+                      <Label for="remarksCashExpense">Remarks</Label>
                       <Input
                         id="remarks *"
                         name="remarks *"
                         placeholder="Enter Remarks"
-                      />
-                    </FormGroup>
-                  </Col>
-                  <Col md={4}>
-                    <FormGroup>
-                      <Label for="cheque">Cheque No</Label>
-                      <Input
-                        id="cheque"
-                        name="cheque"
-                        placeholder="Enter Cheque"
                       />
                     </FormGroup>
                   </Col>
