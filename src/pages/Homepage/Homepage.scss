@@ -1,43 +1,48 @@
 .homeContainer{
     margin: 0 10% 0 10%;
 }
-.cardHome{
+.homeCard{
     background: transparent;
     color: black;
     border: 0;
     box-shadow: none;
                             
 }
-.cardTitleHome
+.homeCardTitle
 {
     border: 5;
     border-radius: 20px;
-    padding: 30%;
+    padding: 25%;
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 }
-.btnHome
+.homeBtn
 {
         background: transparent;
         color: black;
         border: 0;
         box-shadow: none;
         font-weight: 600;
+        font-size: larger;
                             
 }
-.btnHome:hover
+.homeBtn:hover
 {
     background: transparent;
     color: #00CCCC;                            
 }
-.btnHome:focus:active
+.homeBtn:focus:active
 {
     background: transparent;
     color: #00CCCC;
                             
 }
-.card:hover
+.homeCard:hover
 {
     transition: all .3s ease-in-out;
     transform : translateY(-5px);
                             
+}
+
+.homeCardTitle img{
+    width: 100%;
 }
