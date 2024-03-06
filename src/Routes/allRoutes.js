@@ -27,6 +27,11 @@ import ForgetPasswordPage from '../pages/Authentication/ForgotPasswod';
 import ResetPassword from '../pages/Authentication/ResetPassword';
 import Logout from '../pages/Authentication/Logout';
 import CashExpense from "../pages/CashExpense/CashExpense";
+import BankExpense from "../pages/BankExpense/BankExpense";                                                  
+import CreateVoucher from "../pages/CreateVoucher/CreateVoucher";                                                 
+import Receipt from "../pages/Receipt/Receipt";                                                 
+import Views from "../pages/Views/Views";                                                 
+import Other from "../pages/Other/Other";                                                 
 
 const authProtectedRoutes = [
   { path: "/dashboard", component: <Dashboard /> },
@@ -38,6 +43,11 @@ const authProtectedRoutes = [
   { path: "/ticketCategory", component: <TicketCategory /> },
   { path: "/homepage", component: <Homepage /> },
   { path: "/cashExpense", component: <CashExpense /> },
+  { path: "/bankExpense", component: <BankExpense /> },
+  { path: "/receipt", component: <Receipt /> },
+  { path: "/views", component: <Views /> },
+  { path: "/other", component: <Other /> },
+  { path: "/createVoucher", component: <CreateVoucher /> },
 
   // this route should be at the end of all other routes
   // eslint-disable-next-line react/display-name
@@ -47,9 +57,13 @@ const authProtectedRoutes = [
     component: <Navigate to="/dashboard" />,
   },
   { path: "*", component: <Navigate to="/dashboard" /> },
-
   { path: "/homepage", component: <Navigate to="/homepage" /> },
   { path: "/cashExpense", component: <Navigate to="/cashExpense" /> },
+  { path: "/bankExpense", component: <Navigate to="/bankExpense" /> },
+  { path: "/receipt", component: <Navigate to="/receipt" /> },
+  { path: "/views", component: <Navigate to="/views" /> },
+  { path: "/other", component: <Navigate to="/other" /> },
+  { path: "/createVoucher", component: <Navigate to="/createVoucher" /> },
 ];
 
 const publicRoutes = [
