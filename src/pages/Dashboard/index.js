@@ -3,7 +3,7 @@ import { Col, Container, Row } from 'reactstrap';
 import BreadCrumb from '../../Components/Common/BreadCrumb';
 
 const DashboardCrm = () => {
-    document.title = "CRM | Vaival Solutions";
+    document.title = "Fiscal Connect | Vaival Solutions";
     return (
         <React.Fragment>
             <div className="page-content">
