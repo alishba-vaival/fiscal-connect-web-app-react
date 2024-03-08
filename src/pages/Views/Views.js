@@ -12,38 +12,18 @@ import {
   CardHeader,
   Card,
 } from "reactstrap";
-import { FaCheck } from "react-icons/fa";
-import attachment from "../../assets/images/figma/attachment.svg";
-import upload from "../../assets/images/figma/upload.svg";
+import gridIcon from "../../assets/images/figma/grid.svg";
+import pdfIcon from "../../assets/images/figma/pdf.svg";
 
 import Flatpickr from "react-flatpickr";
 import BreadCrumb from "../../Components/Common/BreadCrumb";
-import { FilePond, registerPlugin } from "react-filepond";
-// Import FilePond styles
-import "filepond/dist/filepond.min.css";
-import FilePondPluginImageExifOrientation from "filepond-plugin-image-exif-orientation";
-import FilePondPluginImagePreview from "filepond-plugin-image-preview";
-import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css";
-// import { useFormik } from "formik";
 
-// Register the plugins
-registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
+
+// import { useFormik } from "formik";
 
 const Views = () => {
   document.title = "Fiscal Connect | Vaival Solutions";
 
-  const [selectedFiles, setselectedFiles] = useState([]);
-  const [files, setFiles] = useState([]);
-
-  function handleAcceptedFiles(files) {
-    files.map((file) =>
-      Object.assign(file, {
-        preview: URL.createObjectURL(file),
-        formattedSize: formatBytes(file.size),
-      })
-    );
-    setselectedFiles(files);
-  }
 
   /**
    * Formik
@@ -60,18 +40,6 @@ const Views = () => {
   //   },
   // });
 
-  /**
-   * Formats the size
-   */
-  function formatBytes(bytes, decimals = 2) {
-    if (bytes === 0) return "0 Bytes";
-    const k = 1024;
-    const dm = decimals < 0 ? 0 : decimals;
-    const sizes = ["Bytes", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"];
-
-    const i = Math.floor(Math.log(bytes) / Math.log(k));
-    return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + " " + sizes[i];
-  }
   return (
     <React.Fragment>
       <div className="page-content">
@@ -142,47 +110,31 @@ const Views = () => {
                     </FormGroup>
                   </Col>
                   <Col md={3}>
-                    <div className="input-group">
-                      <Flatpickr
-                        className="form-control border-0 dash-filter-picker shadow"
-                        placeholder="Select date"
-                        options={{
-                          dateFormat: "d-m-Y",
-                          defaultDate: ["2022-01-20"],
-                        }}
-                      />
-                      <div
-                        className="input-group-text border-primary text-white"
-                        style={{ background: "#73C1C6", border: "#73C1C6" }}
-                      >
-                        <i className="ri-calendar-2-line"></i>
-                      </div>
-                    </div>
-                  </Col>
-
-                  <Col md={5}>
                     <FormGroup>
-                      <Label for="selectExpenseAccount">
-                        Select Expense Account
-                      </Label>
-                      <select
-                        className="form-select form-select-md"
-                        aria-label=".form-select-md example"
-                        required
-                      >
-                        <option selected>
-                          100-02-06-001 (Inventery Consumed)
-                        </option>
-                        <option defaultValue="1">
-                          100-02-06-002 (Amount Consumed)
-                        </option>
-                        <option defaultValue="2">
-                          100-02-06-003 (Expense Consumed)
-                        </option>
-                        <option defaultValue="3">
-                          100-02-06-004 (Stock Consumed)
-                        </option>
-                      </select>
+                      <Label for="dateViews">Date</Label> 
+                      <div className="input-group">
+                          <Flatpickr
+                              className="form-control border-0 dash-filter-picker shadow"
+                              placeholder="Select date"
+                              options={{
+                                  dateFormat: "d-m-Y",
+                                  defaultDate: ["2022-01-20"],
+                              }}
+                          />
+                          <div className="input-group-text border-primary text-white" style={{background: "#${primary}", border: "#${primary}"}}><i className="ri-calendar-2-line"></i></div>
+                      </div>
+                    </FormGroup>
+                  </Col>
+                  </Row>
+                <Row>
+                  <Col md={3}>
+                    <FormGroup>
+                      <Label for="remarksViews">Remarks</Label>
+                      <Input
+                        id="remarks *"
+                        name="remarks *"
+                        placeholder="Enter Remarks"
+                      />
                     </FormGroup>
                   </Col>
                   <Col md={3}>
@@ -196,134 +148,38 @@ const Views = () => {
                     </FormGroup>
                   </Col>
                 </Row>
-                <Row>
-                  <Col md={5}>
-                    <FormGroup>
-                      <Label for="taxAccountViews">Tax Account</Label>
-                      <select
-                        className="form-select form-select-md"
-                        aria-label=".form-select-md example"
-                        required
-                      >
-                        <option selected>[100-02-06-001] Cash in Hand</option>
-                        <option defaultValue="1">
-                          [100-02-06-002] Cash in Bank
-                        </option>
-                        <option defaultValue="2">
-                          [100-02-06-003] Cash in House
-                        </option>
-                        <option defaultValue="3">
-                          [100-02-06-004] No Cash
-                        </option>
-                      </select>
-                    </FormGroup>
-                  </Col>
-                  <Col md={3}>
-                    <FormGroup>
-                      <Label for="taxAmountViews">Tax Amount</Label>
-                      <Input
-                        id="taxAmount"
-                        name="taxAmount"
-                        placeholder="Enter Tax Amount"
-                      />
-                    </FormGroup>
-                  </Col>
-                  <Col md={3}>
-                    <FormGroup>
-                      <Label for="netAmountViews">Net Amount</Label>
-                      <Input
-                        id="netAmount"
-                        name="netAmount"
-                        placeholder="xx xxx xxx xxxx"
-                      />
-                    </FormGroup>
-                  </Col>
-                </Row>
-
-                <Row>
-                  <Col md={5}>
-                    <FormGroup>
-                      <Label for="remarksViews">Remarks</Label>
-                      <Input
-                        id="remarks *"
-                        name="remarks *"
-                        placeholder="Enter Remarks"
-                      />
-                    </FormGroup>
-                  </Col>
-                  <Col md={3}>
-                    <FormGroup>
-                      <Label for="chequeViews">Cheque No</Label>
-                      <Input
-                        id="cheque"
-                        name="cheque"
-                        placeholder="Enter Cheque"
-                      />
-                    </FormGroup>
-                  </Col>
-                </Row>
+                
                 <Button
                   style={{
-                    float: "right",
                     background: "transparent",
-                    color: "#0A85FF",
                     borderRadius: "50px",
-                    padding: "5px 23px",
-                    border: "1px solid #00CCCC",
+                    padding: "5px 25px",
+                    border: "1px solid #0080FF",
+                    margin: "10px",
+                    color: "#0080FF",
                   }}
                 >
-                  Save <FaCheck />
+                  View Receipt
+                  <img src={gridIcon} alt="gridIcon" 
+                  style={{margin: "5px"}}/>
                 </Button>
                 <Button
                   style={{
-                    float: "right",
                     background: "transparent",
                     borderRadius: "50px",
-                    padding: "5px 23px",
-                    border: "1px solid #00CCCC",
+                    padding: "5px 25px",
+                    border: "1px solid #FF5652",
+                    color: "#FF5652",
                   }}
                 >
-                  <img src={upload} alt="uploadIcon" />
-                </Button>
-                <Button
-                  style={{
-                    float: "right",
-                    background: "transparent",
-                    borderRadius: "50px",
-                    padding: "5px 23px",
-                    border: "1px solid #00CCCC",
-                  }}
-                >
-                  <img src={attachment} alt="attachmentIcon" />
+                  Pdf View
+                  <img src={pdfIcon} alt="pdfIcon" 
+                  style={{margin: "5px"}}/>
                 </Button>
               </Form>
             </Card>
           </Row>
-          <Row className="mt-4">
-            <Col lg={12}>
-              <Row>
-                <Col lg={12}>
-                  <Card>
-                    <CardHeader>
-                      <h4 className="card-title mb-6">Attachment File</h4>
-                    </CardHeader>
-
-                    <CardBody>
-                      <p className="text-muted"></p>
-                      <FilePond
-                        files={files}
-                        onupdatefiles={setFiles}
-                        allowMultiple={true}
-                        maxFiles={6}
-                        name="files"
-                        className="filepond filepond-input-multiple"
-                      />
-                    </CardBody>
-                  </Card>
-                </Col>
-              </Row>
-            </Col>
-          </Row>
+          
         </Container>
       </div>
     </React.Fragment>

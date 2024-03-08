@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Card, Col, Container, Input, Label, Row, Button } from 'reactstrap';
 import AuthSlider from './authCarousel';
-import icon1 from '../../assets/images/homepage/playstore.svg';
-import icon2 from '../../assets/images/homepage/appstore.svg';
-import logo from '../../assets/images/homepage/fiscalconnectlogo.png';
+import icon1 from '../../assets/images/figma/playstore.svg';
+import icon2 from '../../assets/images/figma/appstore.svg';
+import logo from '../../assets/images/figma/fiscalconnectlogo.png';
 
 const CoverSignIn = () => {
     document.title = "Cover SignIn | Velzon - React Admin & Dashboard Template";
