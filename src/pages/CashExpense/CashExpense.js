@@ -142,16 +142,18 @@ const CashExpense = () => {
                   </Col>
                   <Col md={3}>
                     <FormGroup>
-                      <Label for="dateCashExpense">Date</Label>
-                      <Flatpickr
-                        className="form-control"
-                        id="datepicker-publish-input"
-                        placeholder="Select date"
-                        options={{
-                          dateFormat: "d-m-Y",
-                          defaultDate: ["2022-01-20"],
-                        }}
-                      />
+                      <Label for="dateCashExpense">Date</Label> 
+                      <div className="input-group">
+                          <Flatpickr
+                              className="form-control border-0 dash-filter-picker shadow"
+                              placeholder="Select date"
+                              options={{
+                                  dateFormat: "d-m-Y",
+                                  defaultDate: ["2022-01-20"],
+                              }}
+                          />
+                          <div className="input-group-text border-primary text-white" style={{background: '#73C1C6', border: '#73C1C6'}}><i className="ri-calendar-2-line"></i></div>
+                      </div>
                     </FormGroup>
                   </Col>
 

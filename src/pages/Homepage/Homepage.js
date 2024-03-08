@@ -91,8 +91,8 @@ const HomePage = () => {
           <Row>
             <Col xs={12}></Col>
             <Col md="2">
-              <Card body className="homeCard">
-                <CardTitle tag="h5" className="homeCardTitle"
+              <Card body className="homeCard" >
+                <CardTitle tag="h5" className="homeCardTitle" onClick={handleCashExpenseClick}
                   style={{
                     backgroundColor: "#F2F8FF",
                   }}
@@ -104,7 +104,7 @@ const HomePage = () => {
             </Col>
             <Col md="2">
               <Card body className="homeCard">
-                <CardTitle tag="h5" className="homeCardTitle"
+                <CardTitle tag="h5" className="homeCardTitle" onClick={handleCashExpenseClick} 
                   style={{
                     backgroundColor: "#F2F8FF",
                   }}>
@@ -115,7 +115,7 @@ const HomePage = () => {
             </Col>
             <Col md="2">
               <Card body className="homeCard">
-                <CardTitle tag="h5" className="homeCardTitle"
+                <CardTitle tag="h5" className="homeCardTitle" onClick={handleCashExpenseClick}
                 style={{
                     backgroundColor: "#F6F2FF",
                   }}
@@ -127,7 +127,7 @@ const HomePage = () => {
             </Col>
             <Col md="2">
               <Card body className="homeCard">
-                <CardTitle tag="h5" className="homeCardTitle"
+                <CardTitle tag="h5" className="homeCardTitle" onClick={handleCashExpenseClick}
                   style={{
                     backgroundColor: "#F4FCFB",
                   }}
@@ -141,7 +141,7 @@ const HomePage = () => {
             <Row>
             <Col md="2">
               <Card body className="homeCard">
-                <CardTitle tag="h5"className="homeCardTitle"
+                <CardTitle tag="h5"className="homeCardTitle" onClick={handleCashExpenseClick}
                   style={{
                     backgroundColor: "#FFF9F2",
                   }}
@@ -153,7 +153,7 @@ const HomePage = () => {
             </Col>
             <Col md="2">
               <Card body className="homeCard">
-                <CardTitle tag="h5" className="homeCardTitle"
+                <CardTitle tag="h5" className="homeCardTitle" onClick={handleCashExpenseClick}
                   style={{
                     backgroundColor: "#F2F8FF",
                   }}

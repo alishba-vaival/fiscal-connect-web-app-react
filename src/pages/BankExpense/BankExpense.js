@@ -24,7 +24,7 @@ import "filepond/dist/filepond.min.css";
 import FilePondPluginImageExifOrientation from "filepond-plugin-image-exif-orientation";
 import FilePondPluginImagePreview from "filepond-plugin-image-preview";
 import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css";
-// import { useFormik } from "formik";          
+// import { useFormik } from "formik";
 
 // Register the plugins
 registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
@@ -45,7 +45,6 @@ const BankExpense = () => {
     setselectedFiles(files);
   }
 
-  
   /**
    * Formik
    */
@@ -76,8 +75,7 @@ const BankExpense = () => {
 
   return (
     <React.Fragment>
-     <div className="page-content">
-        
+      <div className="page-content">
         <Container fluid>
           <Row>
             <Col xs={12}></Col>
@@ -90,15 +88,19 @@ const BankExpense = () => {
               }}
             >
               <Form>
-              <BreadCrumb title="BankExpense" pageTitle="BankExpensePage" />
+                <BreadCrumb title="BankExpense" pageTitle="BankExpensePage" />
                 <Row>
-                  <Col md={3} 
-                  style={{
-                    position: "a",
-                    float: "right",
-                  }}>
+                  <Col
+                    md={3}
+                    style={{
+                      position: "a",
+                      float: "right",
+                    }}
+                  >
                     <FormGroup>
-                      <Label for="financialYearBankExpense">Financial Year</Label>
+                      <Label for="financialYearBankExpense">
+                        Financial Year
+                      </Label>
                       <select
                         className="form-select form-select-md"
                         aria-label=".form-select-md example"
@@ -146,21 +148,30 @@ const BankExpense = () => {
                   <Col md={3}>
                     <FormGroup>
                       <Label for="dateBankExpense">Date</Label>
-                      <Flatpickr
-                        className="form-control"
-                        id="datepicker-publish-input"
-                        placeholder="Select date"
-                        options={{
-                          dateFormat: "d-m-Y",
-                          defaultDate: ["2022-01-20"],
-                        }}
-                      />
+                      <div className="input-group">
+                        <Flatpickr
+                          className="form-control border-0 dash-filter-picker shadow"
+                          placeholder="Select date"
+                          options={{
+                            dateFormat: "d-m-Y",
+                            defaultDate: ["2022-01-20"],
+                          }}
+                        />
+                        <div
+                          className="input-group-text border-primary text-white"
+                          style={{ background: "#73C1C6", border: "#73C1C6" }}
+                        >
+                          <i className="ri-calendar-2-line"></i>
+                        </div>
+                      </div>
                     </FormGroup>
                   </Col>
 
                   <Col md={5}>
                     <FormGroup>
-                      <Label for="selectExpenseAccount">Select Expense Account</Label>
+                      <Label for="selectExpenseAccount">
+                        Select Expense Account
+                      </Label>
                       <select
                         className="form-select form-select-md"
                         aria-label=".form-select-md example"
@@ -324,8 +335,6 @@ const BankExpense = () => {
       </div>
     </React.Fragment>
   );
-  
-  
 };
 
 export default BankExpense;
