@@ -1,108 +1,134 @@
 import { call, put, takeEvery, all, fork } from "redux-saga/effects";
 
 // Crypto Redux States
-import { GET_BALANCEOVERVIEW_CHARTS_DATA, GET_DIALTYPE_CHARTS_DATA, GET_SALESFORECAST_CHARTS_DATA } from "./actionType";
-import { dashboardCrmApiSuccess, dashboardCrmApiError } from "./action";
+import { GET_COUNTRY_CHARTS_DATA, GET_AUDIENCESMETRICS_CHARTS_DATA, GET_USERDEVICE_CHARTS_DATA, GET_AUDIENCESSESSIONS_CHARTS_DATA } from "./actionType";
+import { dashboardAnalyticsApiSuccess, dashboardAnalyticsApiError } from "./action";
 
 //Include Both Helper File with needed methods
 import {
-  getTodayBalanceData,
-  getLastWeekBalanceData,
-  getLastMonthBalanceData,
-  getCurrentYearBalanceData,
-  getTodayDealData,
-  getWeeklyDealData,
-  getMonthlyDealData,
-  getYearlyDealData,
-  getOctSalesData,
-  getNovSalesData,
-  getDecSalesData,
-  getJanSalesData
+  getAllData,
+  getHalfYearlyData,
+  getMonthlyData,
+  getAllAudiencesMetricsData,
+  getMonthlyAudiencesMetricsData,
+  getHalfYearlyAudiencesMetricsData,
+  getYearlyAudiencesMetricsData,
+  getTodayDeviceData,
+  getLastWeekDeviceData,
+  getLastMonthDeviceData,
+  getCurrentYearDeviceData,
+  getTodaySessionData,
+  getLastWeekSessionData,
+  getLastMonthSessionData,
+  getCurrentYearSessionData
 }
-  from "../../helpers/fakebackend_helper.js";
+  from "../../helpers/fakebackend_helper";
 
-function* getBalanceChartsData({ payload: data }) {
+function* getChartsData({ payload: data }) {
   try {
     var response;
-    if (data === "today") {
-      response = yield call(getTodayBalanceData, data);
+    if (data === "all") {
+      response = yield call(getAllData, data);
     }
-    if (data === "lastWeek") {
-      response = yield call(getLastWeekBalanceData, data);
-    }
-    if (data === "lastMonth") {
-      response = yield call(getLastMonthBalanceData, data);
-    }
-    if (data === "currentYear") {
-      response = yield call(getCurrentYearBalanceData, data);
-    }
-
-    yield put(dashboardCrmApiSuccess(GET_BALANCEOVERVIEW_CHARTS_DATA, response));
-  } catch (error) {
-    yield put(dashboardCrmApiError(GET_BALANCEOVERVIEW_CHARTS_DATA, error));
-  }
-}
-
-function* getDialChartsData({ payload: data }) {
-  try {
-    var response;
-    if (data === "today") {
-      response = yield call(getTodayDealData, data);
-    }
-    if (data === "weekly") {
-      response = yield call(getWeeklyDealData, data);
+    if (data === "halfyearly") {
+      response = yield call(getHalfYearlyData, data);
     }
     if (data === "monthly") {
-      response = yield call(getMonthlyDealData, data);
-    }
-    if (data === "yearly") {
-      response = yield call(getYearlyDealData, data);
+      response = yield call(getMonthlyData, data);
     }
 
-    yield put(dashboardCrmApiSuccess(GET_DIALTYPE_CHARTS_DATA, response));
+    yield put(dashboardAnalyticsApiSuccess(GET_COUNTRY_CHARTS_DATA, response));
   } catch (error) {
-    yield put(dashboardCrmApiError(GET_DIALTYPE_CHARTS_DATA, error));
+    yield put(dashboardAnalyticsApiError(GET_COUNTRY_CHARTS_DATA, error));
   }
 }
 
-function* getSalesChartsData({ payload: data }) {
+function* getAudiencesMetricsChartsData({ payload: data }) {
   try {
     var response;
-    if (data === "oct") {
-      response = yield call(getOctSalesData, data);
+    if (data === "all") {
+      response = yield call(getAllAudiencesMetricsData, data);
     }
-    if (data === "nov") {
-      response = yield call(getNovSalesData, data);
+    if (data === "monthly") {
+      response = yield call(getMonthlyAudiencesMetricsData, data);
     }
-    if (data === "dec") {
-      response = yield call(getDecSalesData, data);
+    if (data === "halfyearly") {
+      response = yield call(getHalfYearlyAudiencesMetricsData, data);
     }
-    if (data === "jan") {
-      response = yield call(getJanSalesData, data);
+    if (data === "yearly") {
+      response = yield call(getYearlyAudiencesMetricsData, data);
     }
 
-    yield put(dashboardCrmApiSuccess(GET_SALESFORECAST_CHARTS_DATA, response));
+    yield put(dashboardAnalyticsApiSuccess(GET_AUDIENCESMETRICS_CHARTS_DATA, response));
   } catch (error) {
-    yield put(dashboardCrmApiError(GET_SALESFORECAST_CHARTS_DATA, error));
+    yield put(dashboardAnalyticsApiError(GET_AUDIENCESMETRICS_CHARTS_DATA, error));
   }
 }
 
-export function* watchGetBalanceChartsData() {
-  yield takeEvery(GET_BALANCEOVERVIEW_CHARTS_DATA, getBalanceChartsData);
+function* getUserDeviceChartsData({ payload: data }) {
+  try {
+    var response;
+    if (data === "today") {
+      response = yield call(getTodayDeviceData, data);
+    }
+    if (data === "lastWeek") {
+      response = yield call(getLastWeekDeviceData, data);
+    }
+    if (data === "lastMonth") {
+      response = yield call(getLastMonthDeviceData, data);
+    }
+    if (data === "currentYear") {
+      response = yield call(getCurrentYearDeviceData, data);
+    }
+
+    yield put(dashboardAnalyticsApiSuccess(GET_USERDEVICE_CHARTS_DATA, response));
+  } catch (error) {
+    yield put(dashboardAnalyticsApiError(GET_USERDEVICE_CHARTS_DATA, error));
+  }
+}
+function* getAudiencesSessionsChartsData({ payload: data }) {
+  try {
+    var response;
+    if (data === "today") {
+      response = yield call(getTodaySessionData, data);
+    }
+    if (data === "lastWeek") {
+      response = yield call(getLastWeekSessionData, data);
+    }
+    if (data === "lastMonth") {
+      response = yield call(getLastMonthSessionData, data);
+    }
+    if (data === "currentYear") {
+      response = yield call(getCurrentYearSessionData, data);
+    }
+
+    yield put(dashboardAnalyticsApiSuccess(GET_AUDIENCESSESSIONS_CHARTS_DATA, response));
+  } catch (error) {
+    yield put(dashboardAnalyticsApiError(GET_AUDIENCESSESSIONS_CHARTS_DATA, error));
+  }
 }
 
-export function* watchGetDialChartsData() {
-  yield takeEvery(GET_DIALTYPE_CHARTS_DATA, getDialChartsData);
+export function* watchGetChartsData() {
+  yield takeEvery(GET_COUNTRY_CHARTS_DATA, getChartsData);
 }
 
-export function* watchGetSalesChartsData() {
-  yield takeEvery(GET_SALESFORECAST_CHARTS_DATA, getSalesChartsData);
+export function* watchGetAudiencesMetricsChartsData() {
+  yield takeEvery(GET_AUDIENCESMETRICS_CHARTS_DATA, getAudiencesMetricsChartsData);
 }
 
-function* dashboardCrmSaga() {
-  yield all([fork(watchGetBalanceChartsData)]);
-  yield all([fork(watchGetDialChartsData)]);
-  yield all([fork(watchGetSalesChartsData)]);
+export function* watchGetUserDeviceChartsData() {
+  yield takeEvery(GET_USERDEVICE_CHARTS_DATA, getUserDeviceChartsData);
 }
 
-export default dashboardCrmSaga;
+export function* watchGetAudiencesSessionsChartsData() {
+  yield takeEvery(GET_AUDIENCESSESSIONS_CHARTS_DATA, getAudiencesSessionsChartsData);
+}
+
+function* dashboardAnalyticsSaga() {
+  yield all([fork(watchGetChartsData)]);
+  yield all([fork(watchGetAudiencesMetricsChartsData)]);
+  yield all([fork(watchGetUserDeviceChartsData)]);
+  yield all([fork(watchGetAudiencesSessionsChartsData)]);
+}
+
+export default dashboardAnalyticsSaga;
