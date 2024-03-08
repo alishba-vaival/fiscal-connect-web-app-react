@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import cashExpense from '../assets/images/homepage/cashExpense.svg';
-import bankExpense from '../assets/images/homepage/bankExpense.svg';
-import receipt from '../assets/images/homepage/receipt.svg';
-import createVoucher from '../assets/images/homepage/createVoucher.svg';
-import other from '../assets/images/homepage/other.svg';
-import views from '../assets/images/homepage/Views.svg';
-import dashboardIcon from '../assets/images/homepage/dashboard.svg';
-import arrowUp from '../assets/images/homepage/arrowUp.svg';
-import fiscalConnectLogo from '../assets/images/homepage/fiscalConnectLogo.svg';
+import cashExpense from '../assets/images/figma/cashExpense.svg';
+import bankExpense from '../assets/images/figma/bankExpense.svg';
+import receipt from '../assets/images/figma/receipt.svg';
+import createVoucher from '../assets/images/figma/createVoucher.svg';
+import other from '../assets/images/figma/other.svg';
+import views from '../assets/images/figma/Views.svg';
+import dashboardIcon from '../assets/images/figma/dashboard.svg';
+import arrowUp from '../assets/images/figma/arrowUp.svg';
+import fiscalConnectLogo from '../assets/images/figma/fiscalConnectLogo.svg';
 
 const Navdata = () => {
     const history = useNavigate();

@@ -24,12 +24,12 @@ import "filepond/dist/filepond.min.css";
 import FilePondPluginImageExifOrientation from "filepond-plugin-image-exif-orientation";
 import FilePondPluginImagePreview from "filepond-plugin-image-preview";
 import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css";
-// import { useFormik } from "formik";
+// import { useFormik } from "formik";          
 
 // Register the plugins
 registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
 
-const CashExpense = () => {
+const BankExpense = () => {
   document.title = "Fiscal Connect | Vaival Solutions";
 
   const [selectedFiles, setselectedFiles] = useState([]);
@@ -45,6 +45,7 @@ const CashExpense = () => {
     setselectedFiles(files);
   }
 
+  
   /**
    * Formik
    */
@@ -72,9 +73,10 @@ const CashExpense = () => {
     const i = Math.floor(Math.log(bytes) / Math.log(k));
     return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + " " + sizes[i];
   }
+
   return (
     <React.Fragment>
-      <div className="page-content">
+     <div className="page-content">
         
         <Container fluid>
           <Row>
@@ -88,14 +90,15 @@ const CashExpense = () => {
               }}
             >
               <Form>
-              <BreadCrumb title="CashExpense" pageTitle="CashExpensePage" />
+              <BreadCrumb title="BankExpense" pageTitle="BankExpensePage" />
                 <Row>
                   <Col md={3} 
                   style={{
-                    marginLeft: "55rem",
+                    position: "a",
+                    float: "right",
                   }}>
                     <FormGroup>
-                      <Label for="financialYearCashExpense">Financial Year</Label>
+                      <Label for="financialYearBankExpense">Financial Year</Label>
                       <select
                         className="form-select form-select-md"
                         aria-label=".form-select-md example"
@@ -112,7 +115,7 @@ const CashExpense = () => {
                 <Row>
                   <Col md={3}>
                     <FormGroup>
-                      <Label for="siteNameCashExpense">Site Name</Label>
+                      <Label for="siteNameBankExpense">Site Name</Label>
                       <select
                         className="form-select form-select-md"
                         aria-label=".form-select-md example"
@@ -127,7 +130,7 @@ const CashExpense = () => {
                   </Col>
                   <Col md={3}>
                     <FormGroup>
-                      <Label for="classCashExpense">Class</Label>
+                      <Label for="classBankExpense">Class</Label>
                       <select
                         className="form-select form-select-md"
                         aria-label=".form-select-md example"
@@ -142,7 +145,7 @@ const CashExpense = () => {
                   </Col>
                   <Col md={3}>
                     <FormGroup>
-                      <Label for="dateCashExpense">Date</Label>
+                      <Label for="dateBankExpense">Date</Label>
                       <Flatpickr
                         className="form-control"
                         id="datepicker-publish-input"
@@ -180,7 +183,7 @@ const CashExpense = () => {
                   </Col>
                   <Col md={3}>
                     <FormGroup>
-                      <Label for="amountCashExpense">Amount</Label>
+                      <Label for="amountBankExpense">Amount</Label>
                       <Input
                         id="amount"
                         name="amount"
@@ -192,7 +195,7 @@ const CashExpense = () => {
                 <Row>
                   <Col md={5}>
                     <FormGroup>
-                      <Label for="taxAccountCashExpense">Tax Account</Label>
+                      <Label for="taxAccountBankExpense">Tax Account</Label>
                       <select
                         className="form-select form-select-md"
                         aria-label=".form-select-md example"
@@ -213,7 +216,7 @@ const CashExpense = () => {
                   </Col>
                   <Col md={3}>
                     <FormGroup>
-                      <Label for="taxAmountCashExpense">Tax Amount</Label>
+                      <Label for="taxAmountBankExpense">Tax Amount</Label>
                       <Input
                         id="taxAmount"
                         name="taxAmount"
@@ -223,7 +226,7 @@ const CashExpense = () => {
                   </Col>
                   <Col md={3}>
                     <FormGroup>
-                      <Label for="netAmountCashExpense">Net Amount</Label>
+                      <Label for="netAmountBankExpense">Net Amount</Label>
                       <Input
                         id="netAmount"
                         name="netAmount"
@@ -234,13 +237,23 @@ const CashExpense = () => {
                 </Row>
 
                 <Row>
-                  <Col md={3}>
+                  <Col md={5}>
                     <FormGroup>
-                      <Label for="remarksCashExpense">Remarks</Label>
+                      <Label for="remarksBankExpense">Remarks</Label>
                       <Input
                         id="remarks *"
                         name="remarks *"
                         placeholder="Enter Remarks"
+                      />
+                    </FormGroup>
+                  </Col>
+                  <Col md={3}>
+                    <FormGroup>
+                      <Label for="chequeBankExpense">Cheque No</Label>
+                      <Input
+                        id="cheque"
+                        name="cheque"
+                        placeholder="Enter Cheque"
                       />
                     </FormGroup>
                   </Col>
@@ -311,6 +324,8 @@ const CashExpense = () => {
       </div>
     </React.Fragment>
   );
+  
+  
 };
 
-export default CashExpense;
+export default BankExpense;

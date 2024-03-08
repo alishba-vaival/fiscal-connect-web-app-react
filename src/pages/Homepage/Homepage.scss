@@ -1,0 +1,48 @@
+.homeContainer{
+    margin: 0 10% 0 10%;
+}
+.homeCard{
+    background: transparent;
+    color: black;
+    border: 0;
+    box-shadow: none;
+                            
+}
+.homeCardTitle
+{
+    border: 5;
+    border-radius: 20px;
+    padding: 25%;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+.homeBtn
+{
+        background: transparent;
+        color: black;
+        border: 0;
+        box-shadow: none;
+        font-weight: 600;
+        font-size: larger;
+                            
+}
+.homeBtn:hover
+{
+    background: transparent;
+    color: #00CCCC;                            
+}
+.homeBtn:focus:active
+{
+    background: transparent;
+    color: #00CCCC;
+                            
+}
+.homeCard:hover
+{
+    transition: all .3s ease-in-out;
+    transform : translateY(-5px);
+                            
+}
+
+.homeCardTitle img{
+    width: 100%;
+}

@@ -13,27 +13,35 @@
   --#{$prefix}vertical-menu-title-color:             #919da9;
   
   //vertical dark
-  --#{$prefix}vertical-menu-bg-dark:                 #151529;
-  --#{$prefix}vertical-menu-item-color-dark:          #a3a6b7;
-  --#{$prefix}vertical-menu-item-hover-color-dark:    #{$white};
-  --#{$prefix}vertical-menu-item-active-color-dark:  #{$white};
-  --#{$prefix}vertical-menu-sub-item-color-dark:     #a3a6b7;
-  --#{$prefix}vertical-menu-sub-item-hover-color-dark: #{$white};
-  --#{$prefix}vertical-menu-sub-item-active-color-dark: #{$white};
-  --#{$prefix}vertical-menu-title-color-dark:         #{darken($gray-600, 10%)};
+  // --#{$prefix}vertical-menu-bg-dark:                 #ffffff;
+  // --#{$prefix}vertical-menu-item-color-dark:         #{$black};
+  // --#{$prefix}vertical-menu-item-hover-color-dark:   #a3a6b7;
+  // --#{$prefix}vertical-menu-item-active-color-dark:  #a3a6b7;
+  // --#{$prefix}vertical-menu-sub-item-color-dark:     #{$black};
+  // --#{$prefix}vertical-menu-sub-item-hover-color-dark: #{$black};
+  // --#{$prefix}vertical-menu-sub-item-active-color-dark: #{$black};
+  // --#{$prefix}vertical-menu-title-color-dark:         #{darken($gray-600, 10%)};
+  --#{$prefix}vertical-menu-bg-dark:                    #{$white};
+  --#{$prefix}vertical-menu-item-color-dark:            #{darken($gray-600, 10%)};
+  --#{$prefix}vertical-menu-item-hover-color-dark:      #{$primary};
+  --#{$prefix}vertical-menu-item-active-color-dark:     #{$primary};
+  --#{$prefix}vertical-menu-sub-item-color-dark:        #{darken($gray-600, 4%)};
+  --#{$prefix}vertical-menu-sub-item-hover-color-dark:  #{$primary};
+  --#{$prefix}vertical-menu-sub-item-active-color-dark: #{$primary};
+  --#{$prefix}vertical-menu-title-color-dark:           #919da9;
 
   // Topbar - (Default Light)
-  --#{$prefix}header-bg:  #{$white};
-  --#{$prefix}header-item-color:  #e9ecef;
-  // Topbar - Dark
-  --#{$prefix}header-bg-dark:  #1C1C36;
-  --#{$prefix}header-item-color-dark:  var(--#{$prefix}vertical-menu-item-color-dark);
+  --#{$prefix}header-bg-dark:  #{$white};
+  --#{$prefix}header-item-color-dark:  #{$black};
+  // // Topbar - Dark
+  // --#{$prefix}header-bg-dark:  #1C1C36;
+  // --#{$prefix}header-item-color-dark:  var(--#{$prefix}vertical-menu-item-color-dark);
 
   // Topbar Search
   --#{$prefix}topbar-search-bg: #f3f3f9;
   // Topbar User
   --#{$prefix}topbar-user-bg: #f3f3f9;
-  --#{$prefix}topbar-user-bg-dark: #2A2A50;
+  --#{$prefix}topbar-user-bg-dark: #fff;
 
   //footer
   --#{$prefix}footer-bg: #{$white};
@@ -49,10 +57,10 @@
   --#{$prefix}twocolumn-menu-bg:  #{$white};
   // two column dark
   --#{$prefix}twocolumn-menu-iconview-bg-dark: var(--#{$prefix}vertical-menu-bg-dark);
-  --#{$prefix}twocolumn-menu-bg-dark:  #1C1C36;
+  --#{$prefix}twocolumn-menu-bg-dark:  #fff;
   --#{$prefix}twocolumn-menu-item-color-dark: var(--#{$prefix}vertical-menu-item-color-dark);
-  --#{$prefix}twocolumn-menu-item-active-color-dark:  #{$white};
-  --#{$prefix}twocolumn-menu-item-active-bg-dark:  #{rgba($white, .15)};
+  --#{$prefix}twocolumn-menu-item-active-color-dark:  #{$black};
+  --#{$prefix}twocolumn-menu-item-active-bg-dark:  #{rgba($black, .15)};
 
   // boxed 
   --#{$prefix}boxed-body-bg: #{darken($body-bg, 4%)};

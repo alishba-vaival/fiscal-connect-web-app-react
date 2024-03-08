@@ -4,7 +4,7 @@ import BreadCrumb from '../../Components/Common/BreadCrumb';
 import Section from "./Section"; 
 import Widget from './Widget';   
 const DashboardCrm = () => {
-    document.title = "CRM | Vaival Solutions";
+    document.title = "Fiscal Connect | Vaival Solutions";
     return (
         <React.Fragment>
             <div className="page-content">
