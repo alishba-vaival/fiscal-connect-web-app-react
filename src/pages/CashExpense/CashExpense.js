@@ -152,7 +152,7 @@ const CashExpense = () => {
                                   defaultDate: ["2022-01-20"],
                               }}
                           />
-                          <div className="input-group-text border-primary text-white" style={{background: '#73C1C6', border: '#73C1C6'}}><i className="ri-calendar-2-line"></i></div>
+                          <div className="input-group-text bg-primary border-primary text-white"><i className="ri-calendar-2-line"></i></div>
                       </div>
                     </FormGroup>
                   </Col>

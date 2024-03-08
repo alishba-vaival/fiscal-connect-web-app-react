@@ -121,7 +121,7 @@ const Views = () => {
                                   defaultDate: ["2022-01-20"],
                               }}
                           />
-                          <div className="input-group-text border-primary text-white" style={{background: "#${primary}", border: "#${primary}"}}><i className="ri-calendar-2-line"></i></div>
+                          <div className="input-group-text bg-primary border-primary text-white"><i className="ri-calendar-2-line"></i></div>
                       </div>
                     </FormGroup>
                   </Col>
