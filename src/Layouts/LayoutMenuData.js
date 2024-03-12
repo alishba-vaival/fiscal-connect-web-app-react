@@ -56,7 +56,8 @@ const Navdata = () => {
         isDashboard,
         isLeadManagement,
         isContactManagement,
-        isTicketManagement
+        isTicketManagement,
+        iscurrentState
     ]);
 
     const menuItems = [
@@ -68,8 +69,7 @@ const Navdata = () => {
             id: "home",
             label: "Home",
             image: dashboardIcon,
-            icon: "ri-home-5-line",
-            image: dashboardIcon,
+            icon: "ri-home-5-line", 
             link: "/#",
             click: function (e) {
                 e.preventDefault();
