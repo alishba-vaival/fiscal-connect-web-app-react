@@ -18,11 +18,7 @@ const DashboardCrm = () => {
                         {/* <StoreVisits /> */}
                     </Row>
                     
-                    <Row> 
-                    </Row>
-                    <Row>
-               
-                     </Row>
+                     
                 </Container>
             </div>
         </React.Fragment>

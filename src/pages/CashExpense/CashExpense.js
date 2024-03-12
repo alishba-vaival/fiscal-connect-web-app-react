@@ -77,18 +77,15 @@ const CashExpense = () => {
       <div className="page-content">
         
         <Container fluid>
-          <Row>
-            <Col xs={12}></Col>
+        <BreadCrumb title="CashExpense" pageTitle="CashExpensePage" />
+          <Row> 
+          <Col lg={12}>
             <Card
-              fluid
-              style={{
-                backgroundColor: "white",
-                padding: "1.3%",
-                margin: "0.3%",
-              }}
+              fluid 
             >
+                 <CardBody>
               <Form>
-              <BreadCrumb title="CashExpense" pageTitle="CashExpensePage" />
+            
                 <Row>
                   <Col md={3} 
                   style={{
@@ -282,18 +279,26 @@ const CashExpense = () => {
                   <img src={attachment} alt="attachmentIcon" />
                 </Button>
               </Form>
+              </CardBody>
             </Card>
+            </Col>
           </Row>
           <Row className="mt-4">
             <Col lg={12}>
               <Row>
                 <Col lg={12}>
-                  <Card>
-                    <CardHeader>
-                      <h4 className="card-title mb-6">Attachment File</h4>
-                    </CardHeader>
-
+                  <Card className="ribbon-box border shadow-none "> 
                     <CardBody>
+                    <Row className="g-4 mb-3">
+                      <Col className="">
+                        <div>
+                          <div className="mb-3">
+                            <div className="ribbon ribbon-primary ribbon-shape">Attachment File</div>
+                          </div>
+                        </div>
+                      </Col> 
+                    </Row>
+                    <Row>
                       <p className="text-muted"></p>
                       <FilePond
                         files={files}
@@ -303,6 +308,7 @@ const CashExpense = () => {
                         name="files"
                         className="filepond filepond-input-multiple"
                       />
+                      </Row>
                     </CardBody>
                   </Card>
                 </Col>
