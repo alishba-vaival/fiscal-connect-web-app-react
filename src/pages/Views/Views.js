@@ -558,7 +558,7 @@ const Views = () => {
                     </Col>
                     <Col md={6}>
                     <FormGroup>
-                      <Label for="remarksViews">Remarks</Label>
+                      <Label for="remarksViews">Remarks<span className="text-danger">*</span></Label>
                       <Input
                         id="remarks *"
                         name="remarks *"
