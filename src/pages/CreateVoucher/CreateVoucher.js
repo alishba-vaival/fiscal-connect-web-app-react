@@ -204,7 +204,7 @@ const CreateVoucher = () => {
                         </FormGroup>
                       </Col>
                     </Row>
-                    <Row className=" mb-5"></Row>
+                    <Row className=" mb-3"></Row>
                     <Button
                       style={{
                         float: "right",
@@ -222,6 +222,7 @@ const CreateVoucher = () => {
                         style={{ marginLeft: "10px" }}
                       />
                     </Button>
+                    <Row className=" mb-5"></Row>
                   </Form>
                 </CardBody>
               </Card>

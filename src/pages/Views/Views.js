@@ -231,7 +231,7 @@ const Views = () => {
                       </Col>
                       
                     </Row>
-
+                    <Row className=" mb-3"></Row>
                     <Button
                       style={{
                         background: "transparent",
@@ -265,16 +265,19 @@ const Views = () => {
                         style={{ marginLeft: "10px" }}
                       />
                     </Button>
+                    <Row className=" mb-3"></Row>
                   </Form>
                 </CardBody>
               </Card>
             </Col>
           </Row>
+          
           <Row>
             <Col lg={12}>
               <Card className="ribbon-box border shadow-none  ">
                 <CardBody>
                   <div id="customerList">
+                  <Row className=" mb-3"></Row>
                     <Row className="g-4 mb-3">
                       <Col>
                           <div className="mb-3">
@@ -323,6 +326,8 @@ const Views = () => {
                         </div>
                       </Col>
                     </Row>
+                    <Row className=" mb-3"></Row>
+                     {/* Table  */}
                     <div className="table-responsive table-card mt-3 mb-1">
                       <table
                         className="table align-middle table-nowrap"
@@ -649,6 +654,7 @@ const Views = () => {
               </Card>
             </Col>
           </Row>
+          
         </Container>
       </div>
 
