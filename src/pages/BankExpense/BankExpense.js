@@ -77,238 +77,229 @@ const BankExpense = () => {
     <React.Fragment>
       <div className="page-content">
         <Container fluid>
+          <BreadCrumb title="BankExpense" pageTitle="BankExpense" />
           <Row>
-            <Col xs={12}></Col>
-            <Card
-              fluid
-              style={{
-                backgroundColor: "white",
-                padding: "1.3%",
-                margin: "0.3%",
-              }}
-            >
-              <Form>
-                <BreadCrumb title="BankExpense" pageTitle="BankExpensePage" />
-                <Row>
-                  <Col
-                    md={3}
-                    style={{
-                      position: "a",
-                      float: "right",
-                    }}
-                  >
-                    <FormGroup>
-                      <Label for="financialYearBankExpense">
-                        Financial Year
-                      </Label>
-                      <select
-                        className="form-select form-select-md"
-                        aria-label=".form-select-md example"
-                        required
-                      >
-                        <option selected>2020-2021</option>
-                        <option defaultValue="1">2021-2022</option>
-                        <option defaultValue="2">2023-2024</option>
-                        <option defaultValue="3">2024-2025</option>
-                      </select>
-                    </FormGroup>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col md={3}>
-                    <FormGroup>
-                      <Label for="siteNameBankExpense">Site Name</Label>
-                      <select
-                        className="form-select form-select-md"
-                        aria-label=".form-select-md example"
-                        required
-                      >
-                        <option selected>Head Office</option>
-                        <option defaultValue="1">Test 1 Office</option>
-                        <option defaultValue="2">Test 2 Office</option>
-                        <option defaultValue="3">Test 3 Office</option>
-                      </select>
-                    </FormGroup>
-                  </Col>
-                  <Col md={3}>
-                    <FormGroup>
-                      <Label for="classBankExpense">Class</Label>
-                      <select
-                        className="form-select form-select-md"
-                        aria-label=".form-select-md example"
-                        required
-                      >
-                        <option selected>Lahore</option>
-                        <option defaultValue="1">Test 1 City</option>
-                        <option defaultValue="2">Test 2 City</option>
-                        <option defaultValue="3">Test 3 City</option>
-                      </select>
-                    </FormGroup>
-                  </Col>
-                  <Col md={3}>
-                    <FormGroup>
-                      <Label for="dateBankExpense">Date</Label> 
-                      <div className="input-group">
-                          <Flatpickr
-                              className="form-control border-0 dash-filter-picker shadow"
+            <Col lg={12}>
+              <Card>
+                <CardBody>
+                  <Form>
+                    <Row>
+                      <Col md={3}>
+                        <FormGroup>
+                          <Label for="siteNameBankExpense">
+                            Site Name<span className="text-danger"> *</span>
+                          </Label>
+                          <select
+                            className="form-select form-select-md"
+                            aria-label=".form-select-md example"
+                            required
+                          >
+                            <option selected>Head Office</option>
+                            <option defaultValue="1">Test 1 Office</option>
+                            <option defaultValue="2">Test 2 Office</option>
+                            <option defaultValue="3">Test 3 Office</option>
+                          </select>
+                        </FormGroup>
+                      </Col>
+                      <Col md={3}>
+                        <FormGroup>
+                          <Label for="classBankExpense">Class</Label>
+                          <select
+                            className="form-select form-select-md"
+                            aria-label=".form-select-md example"
+                            required
+                          >
+                            <option selected>Lahore</option>
+                            <option defaultValue="1">Test 1 City</option>
+                            <option defaultValue="2">Test 2 City</option>
+                            <option defaultValue="3">Test 3 City</option>
+                          </select>
+                        </FormGroup>
+                      </Col>
+                      <Col md={3}>
+                        <FormGroup>
+                          <Label for="dateBankExpense">Date</Label>
+                          <div className="input-group">
+                            <Flatpickr
+                              className="form-control dash-filter-picker"
                               placeholder="Select date"
                               options={{
-                                  dateFormat: "d-m-Y",
-                                  defaultDate: ["2022-01-20"],
+                                dateFormat: "d-m-Y",
+                                defaultDate: ["2022-01-20"],
                               }}
+                            />
+                            <div className="input-group-text bg-primary border-primary text-white">
+                              <i className="ri-calendar-2-line"></i>
+                            </div>
+                          </div>
+                        </FormGroup>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col md={5}>
+                        <FormGroup>
+                          <Label for="selectExpenseAccount">
+                            Select Expense Account
+                            <span className="text-danger"> *</span>
+                          </Label>
+                          <select
+                            className="form-select form-select-md"
+                            aria-label=".form-select-md example"
+                            required
+                          >
+                            <option selected>
+                              100-02-06-001 (Inventery Consumed)
+                            </option>
+                            <option defaultValue="1">
+                              100-02-06-002 (Amount Consumed)
+                            </option>
+                            <option defaultValue="2">
+                              100-02-06-003 (Expense Consumed)
+                            </option>
+                            <option defaultValue="3">
+                              100-02-06-004 (Stock Consumed)
+                            </option>
+                          </select>
+                        </FormGroup>
+                      </Col>
+                      <Col md={3}>
+                        <FormGroup>
+                          <Label for="amountBankExpense">
+                            Amount<span className="text-danger"> *</span>
+                          </Label>
+                          <Input
+                            id="amount"
+                            name="amount"
+                            placeholder="Enter Amount"
                           />
-                          <div className="input-group-text bg-primary border-primary text-white"><i className="ri-calendar-2-line"></i></div>
-                      </div>
-                    </FormGroup>
-                  </Col>
+                        </FormGroup>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col md={5}>
+                        <FormGroup>
+                          <Label for="taxAccountBankExpense">Tax Account</Label>
+                          <select
+                            className="form-select form-select-md"
+                            aria-label=".form-select-md example"
+                            required
+                          >
+                            <option selected>
+                              [100-02-06-001] Cash in Hand
+                            </option>
+                            <option defaultValue="1">
+                              [100-02-06-002] Cash in Bank
+                            </option>
+                            <option defaultValue="2">
+                              [100-02-06-003] Cash in House
+                            </option>
+                            <option defaultValue="3">
+                              [100-02-06-004] No Cash
+                            </option>
+                          </select>
+                        </FormGroup>
+                      </Col>
+                      <Col md={3}>
+                        <FormGroup>
+                          <Label for="taxAmountBankExpense">Tax Amount</Label>
+                          <Input
+                            id="taxAmount"
+                            name="taxAmount"
+                            placeholder="Enter Tax Amount"
+                          />
+                        </FormGroup>
+                      </Col>
+                      <Col md={3}>
+                        <FormGroup>
+                          <Label for="netAmountBankExpense">Net Amount</Label>
+                          <Input
+                            id="netAmount"
+                            name="netAmount"
+                            placeholder="xx xxx xxx xxxx"
+                          />
+                        </FormGroup>
+                      </Col>
+                    </Row>
 
-                  <Col md={5}>
-                    <FormGroup>
-                      <Label for="selectExpenseAccount">
-                        Select Expense Account
-                      </Label>
-                      <select
-                        className="form-select form-select-md"
-                        aria-label=".form-select-md example"
-                        required
-                      >
-                        <option selected>
-                          100-02-06-001 (Inventery Consumed)
-                        </option>
-                        <option defaultValue="1">
-                          100-02-06-002 (Amount Consumed)
-                        </option>
-                        <option defaultValue="2">
-                          100-02-06-003 (Expense Consumed)
-                        </option>
-                        <option defaultValue="3">
-                          100-02-06-004 (Stock Consumed)
-                        </option>
-                      </select>
-                    </FormGroup>
-                  </Col>
-                  <Col md={3}>
-                    <FormGroup>
-                      <Label for="amountBankExpense">Amount</Label>
-                      <Input
-                        id="amount"
-                        name="amount"
-                        placeholder="Enter Amount"
-                      />
-                    </FormGroup>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col md={5}>
-                    <FormGroup>
-                      <Label for="taxAccountBankExpense">Tax Account</Label>
-                      <select
-                        className="form-select form-select-md"
-                        aria-label=".form-select-md example"
-                        required
-                      >
-                        <option selected>[100-02-06-001] Cash in Hand</option>
-                        <option defaultValue="1">
-                          [100-02-06-002] Cash in Bank
-                        </option>
-                        <option defaultValue="2">
-                          [100-02-06-003] Cash in House
-                        </option>
-                        <option defaultValue="3">
-                          [100-02-06-004] No Cash
-                        </option>
-                      </select>
-                    </FormGroup>
-                  </Col>
-                  <Col md={3}>
-                    <FormGroup>
-                      <Label for="taxAmountBankExpense">Tax Amount</Label>
-                      <Input
-                        id="taxAmount"
-                        name="taxAmount"
-                        placeholder="Enter Tax Amount"
-                      />
-                    </FormGroup>
-                  </Col>
-                  <Col md={3}>
-                    <FormGroup>
-                      <Label for="netAmountBankExpense">Net Amount</Label>
-                      <Input
-                        id="netAmount"
-                        name="netAmount"
-                        placeholder="xx xxx xxx xxxx"
-                      />
-                    </FormGroup>
-                  </Col>
-                </Row>
-
-                <Row>
-                  <Col md={5}>
-                    <FormGroup>
-                      <Label for="remarksBankExpense">Remarks</Label>
-                      <Input
-                        id="remarks *"
-                        name="remarks *"
-                        placeholder="Enter Remarks"
-                      />
-                    </FormGroup>
-                  </Col>
-                  <Col md={3}>
-                    <FormGroup>
-                      <Label for="chequeBankExpense">Cheque No</Label>
-                      <Input
-                        id="cheque"
-                        name="cheque"
-                        placeholder="Enter Cheque"
-                      />
-                    </FormGroup>
-                  </Col>
-                </Row>
-                <Button
-                  style={{
-                    float: "right",
-                    background: "transparent",
-                    color: "#0A85FF",
-                    borderRadius: "50px",
-                    padding: "5px 23px",
-                    border: "1px solid #00CCCC",
-                  }}
-                >
-                  Save <FaCheck />
-                </Button>
-                <Button
-                  style={{
-                    float: "right",
-                    background: "transparent",
-                    borderRadius: "50px",
-                    padding: "5px 23px",
-                    border: "1px solid #00CCCC",
-                  }}
-                >
-                  <img src={upload} alt="uploadIcon" />
-                </Button>
-                <Button
-                  style={{
-                    float: "right",
-                    background: "transparent",
-                    borderRadius: "50px",
-                    padding: "5px 23px",
-                    border: "1px solid #00CCCC",
-                  }}
-                >
-                  <img src={attachment} alt="attachmentIcon" />
-                </Button>
-              </Form>
-            </Card>
+                    <Row>
+                      <Col md={5}>
+                        <FormGroup>
+                          <Label for="remarksBankExpense">
+                            Remarks<span className="text-danger"> *</span>
+                          </Label>
+                          <Input
+                            id="remarks"
+                            name="remarks"
+                            placeholder="Enter Remarks"
+                          />
+                        </FormGroup>
+                      </Col>
+                      <Col md={3}>
+                        <FormGroup>
+                          <Label for="chequeBankExpense">Cheque No</Label>
+                          <Input
+                            id="cheque"
+                            name="cheque"
+                            placeholder="Enter Cheque"
+                          />
+                        </FormGroup>
+                      </Col>
+                    </Row>
+                    <Button
+                      style={{
+                        float: "right",
+                        background: "transparent",
+                        color: "#0A85FF",
+                        borderRadius: "50px",
+                        padding: "5px 23px",
+                        border: "1px solid #00CCCC",
+                      }}
+                    >
+                      Save <FaCheck />
+                    </Button>
+                    <Button
+                      style={{
+                        float: "right",
+                        background: "transparent",
+                        borderRadius: "50px",
+                        padding: "5px 23px",
+                        border: "1px solid #00CCCC",
+                      }}
+                    >
+                      <img src={upload} alt="uploadIcon" />
+                    </Button>
+                    <Button
+                      style={{
+                        float: "right",
+                        background: "transparent",
+                        borderRadius: "50px",
+                        padding: "5px 23px",
+                        border: "1px solid #00CCCC",
+                      }}
+                    >
+                      <img src={attachment} alt="attachmentIcon" />
+                    </Button>
+                  </Form>
+                </CardBody>
+              </Card>
+            </Col>
           </Row>
           <Row className="mt-4">
             <Col lg={12}>
               <Row>
                 <Col lg={12}>
-                  <Card>
-                    <CardHeader>
-                      <h4 className="card-title mb-6">Attachment File</h4>
-                    </CardHeader>
+                  <Card className="ribbon-box border shadow-none ">
+                    <Row className="g-4 mb-3">
+                      <Col className="">
+                        <div>
+                          <div className="mb-3">
+                            <div className="ribbon ribbon-primary ribbon-shape">
+                              Attachment File
+                            </div>
+                          </div>
+                        </div>
+                      </Col>
+                    </Row>
 
                     <CardBody>
                       <p className="text-muted"></p>
