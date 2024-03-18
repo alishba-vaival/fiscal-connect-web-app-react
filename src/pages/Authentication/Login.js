@@ -1,13 +1,54 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useState } from "react";
+import { Link, useNavigate, NavLink } from 'react-router-dom';
 import { Card, Col, Container, Input, Label, Row, Button } from 'reactstrap';
 import AuthSlider from './authCarousel';
 import icon1 from '../../assets/images/figma/playstore.svg';
 import icon2 from '../../assets/images/figma/appstore.svg';
 import logo from '../../assets/images/figma/fiscalconnectlogo.png';
 
+import { Checkbox, Grid, TextField, Box, styled, useTheme } from "@mui/material";
+import { LoadingButton } from "@mui/lab";
+import { Formik } from "formik";
+import * as Yup from "yup";
+
+// import useAuth from "app/hooks/useAuth";
+import { Paragraph } from "../../Components/Typography";
+
+
+// initial login credentials
+const initialValues = {
+    email: "demo@vaival.com",
+    password: "demopass",
+    remember: true
+};
+
+// form field validation schema
+const validationSchema = Yup.object().shape({
+    password: Yup.string()
+        .min(6, "Password must be 6 character length")
+        .required("Password is required!"),
+    email: Yup.string().email("Invalid Email address").required("Email is required!")
+});
+
 const CoverSignIn = () => {
     document.title = "Cover SignIn | Velzon - React Admin & Dashboard Template";
+
+    const theme = useTheme();
+    const navigate = useNavigate();
+    const [loading, setLoading] = useState(false);
+
+    //   const { login } = useAuth();
+
+    const handleFormSubmit = async () => {
+        setLoading(true);
+        try {
+            //   await login(values.email, values.password);
+            navigate("/");
+        } catch (e) {
+            setLoading(false);
+        }
+    };
     return (
         <React.Fragment>
             <style>
@@ -26,7 +67,6 @@ const CoverSignIn = () => {
                                 <Card className="overflow-hidden" style={{ boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)' }}>
                                     <Row className="g-0">
                                         <AuthSlider /> 
-
                                         <Col lg={6}>
                                             <div className="p-lg-5 p-4">
                                                 <div style={{ display: 'flex', justifyContent: 'center' }}>
@@ -34,30 +74,85 @@ const CoverSignIn = () => {
                                                 </div>
 
                                                 <div className="mt-4" style={{ boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)', padding: '20px', borderRadius: '15px' }}>
-                                                    <form action="/"> 
-                                                        <div className="mb-3">
-                                                            <Label htmlFor="username" className="form-label">Username</Label>
-                                                            <Input type="text" className="form-control" id="username" placeholder="Email" style={{ height: '50px' ,fontSize: '16px' }} />
-                                                        </div> 
-                                                        <div className="mb-3">
-                                                            <div className="float-end">
-                                                                <Link to="/auth-pass-reset-cover" className="text-muted">Forgot password?</Link>
-                                                            </div>
-                                                            <Label className="form-label" htmlFor="password-input">Password</Label>
-                                                            <div className="position-relative auth-pass-inputgroup mb-3">
-                                                                <Input type="password" className="form-control pe-5 password-input" placeholder="Password" id="password-input" style={{ height: '50px',fontSize: '16px'  }}/>
-                                                            </div>
-                                                        </div>
-                                                        <div className="mt-4">
-                                                            <Button color="info" className="w-100" type="submit" style={{ height: '50px' ,fontSize: '16px' ,fontWeight:' bold'}}>Sign In</Button>
-                                                        </div>  
-                                                    </form>
+                                                    <Formik 
+                                                        style={{ display: 'flex', justifyContent: 'center' }}
+                                                        onSubmit={handleFormSubmit}
+                                                        initialValues={initialValues}
+                                                        validationSchema={validationSchema}>
+                                                        {({ values, errors, touched, handleChange, handleBlur, handleSubmit }) => (
+                                                            <form onSubmit={handleSubmit}> 
+                                                                    <TextField
+                                                                        fullWidth
+                                                                        size="small"
+                                                                        type="email"
+                                                                        name="email"
+                                                                        label="Email"
+                                                                        variant="outlined"
+                                                                        onBlur={handleBlur}
+                                                                        value={values.email}
+                                                                        onChange={handleChange}
+                                                                        helperText={touched.email && errors.email}
+                                                                        error={Boolean(errors.email && touched.email)}
+                                                                        sx={{ mb: 3, marginTop: '1rem' }}
+                                                                    />
+                                                              
+                                                             
+                                                                    <TextField
+                                                                        fullWidth
+                                                                        size="small"
+                                                                        name="password"
+                                                                        type="password"
+                                                                        label="Password"
+                                                                        variant="outlined"
+                                                                        onBlur={handleBlur}
+                                                                        value={values.password}
+                                                                        onChange={handleChange}
+                                                                        helperText={touched.password && errors.password}
+                                                                        error={Boolean(errors.password && touched.password)}
+                                                                        sx={{ mb: 1.5 }}
+                                                                    />
+                                                             
+                                                                
+                                                                    <Row justifyContent="space-between">
+                                                                        <Col  >
+                                                                            <Checkbox
+                                                                                size="small"
+                                                                                name="remember"
+                                                                                onChange={handleChange}
+                                                                                checked={values.remember}
+                                                                                sx={{ padding: 0, display: 'inline-flex', alignItems: 'center' }} // Add inline-flex and alignItems
+                                                                            />
+
+                                                                            <Paragraph style={{ display: 'inline', marginLeft: '0.5rem' }}>Remember Me</Paragraph>
+                                                                        </Col>
+                                                                        <Col>
+                                                                            <NavLink
+                                                                            className="float-end"
+                                                                                to="/session/forgot-password"
+                                                                                style={{ color: theme.palette.primary.main,textAlign: 'end',marginLeft: 'auto' }}>
+                                                                                Forgot password?
+                                                                            </NavLink>
+                                                                        </Col>
+                                                                    </Row>
+                                                             
+                                                                    <LoadingButton
+                                                                        type="submit"
+                                                                        color="primary"
+                                                                        loading={loading}
+                                                                        variant="contained"
+                                                                        sx={{ my: 2 }}>
+                                                                        Login
+                                                                    </LoadingButton>
+                                                                
+                                                            </form>
+                                                        )}
+                                                    </Formik>
                                                 </div>
 
                                                 <div className="mt-4 text-center">
                                                     <div>
-                                                        <img src={icon1} alt="" height="60" />
-                                                        <img src={icon2} alt="" height="60" />
+                                                        <img src={icon1} alt=""  width="50%" />
+                                                        <img src={icon2} alt=""  width="50%"/>
                                                     </div>
                                                 </div>
                                             </div>

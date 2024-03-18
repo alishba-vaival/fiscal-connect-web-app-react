@@ -13,8 +13,9 @@ import user3 from '../../assets/images/users/avatar-3.jpg';
 import user4 from '../../assets/images/users/avatar-4.jpg';
 import user5 from '../../assets/images/users/avatar-5.jpg';
 import user6 from '../../assets/images/users/avatar-6.jpg';
-import { FaCheck,FaEye,FaIoMdAddCircleOutline } from "react-icons/fa"; 
+import { FaCheck,FaEye } from "react-icons/fa"; 
 import { IoMdAddCircleOutline } from "react-icons/io";
+import { FaCloudUploadAlt } from "react-icons/fa";
 import {
   Col,
   Container,
@@ -156,9 +157,7 @@ const Views = () => {
                 <CardBody>
                   <Form action="#">
                     <Row className="justify-content-end">
-                      <Col
-                        md={3}  
-                      >
+                      <Col md={3}>
                         <FormGroup>
                           <Label for="financialYearViews">Financial Year</Label>
                           <select
@@ -714,7 +713,7 @@ const Views = () => {
                             allowMultiple={true}
                             maxFiles={6}
                             name="files"
-                            className="filepond filepond-input-multiple"
+                            className="filepond filepond-input-multiple" 
                           />
                         </Row>
                       </CardBody>
@@ -745,7 +744,7 @@ const Views = () => {
                 style={{
                   float: "right",
                   background: "transparent",
-                  color: "#45CB85",
+                  color: "#0A85FF",
                   borderRadius: "50px",
                   padding: "5px 23px",
                   border: "1px solid #00CCCC",
@@ -763,7 +762,7 @@ const Views = () => {
                   border: "1px solid #00CCCC",
                 }}
               >
-                Update <FaCheck />
+                Upload <FaCloudUploadAlt />
               </Button>  
             </div>  
           </ModalFooter>
