@@ -509,7 +509,7 @@
 
     &[data-sidebar-size="sm"] {
         @media (min-width: 768px) {
-            min-height: 1400px;
+            // min-height: 1400px;
 
             .main-content {
                 margin-left: $vertical-menu-width-sm;
