@@ -224,6 +224,7 @@ const Views = () => {
   const [taxAmountEditVoucher, setTaxAmountEditVoucher] = useState("");
   const [netAmountEditVoucher, setNetAmountEditVoucher] = useState("");
 
+<<<<<<< HEAD
   // const handleSubmit = (event) => {
   //   console.log("submitted");
   //   console.log(event);
@@ -251,6 +252,14 @@ const Views = () => {
   
     // Perform any additional operations here, such as sending data to an API
   };
+=======
+  const handleSubmit = (event) => {
+    console.log("submitted");
+    console.log(event);
+    console.log(state);
+  };
+  
+>>>>>>> alishba-fiscal-connect
 
   // const handleChange = (event) => {
   //   event.persist();
@@ -271,129 +280,165 @@ const Views = () => {
         <Container fluid>
           <BreadCrumb title="Views" pageTitle="ViewsPage" />
           <Row>
-            <Col lg={12} >
-              <Card   >
-                <CardBody>
-                  <Form action="#">
-                    <Row className="justify-content-end">
-                      <Col md={3}>
-                        <FormGroup>
-                          <Label for="financialYearViews">Financial Year</Label>
-                          <select
-                            className="form-select form-select-md"
-                            aria-label=".form-select-md example"
-                            required
-                          >
-                            <option defaultValue>2020-2021</option>
-                            <option defaultValue="1">2021-2022</option>
-                            <option defaultValue="2">2023-2024</option>
-                            <option defaultValue="3">2024-2025</option>
-                          </select>
-                        </FormGroup>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col md={3}>
-                        <FormGroup>
-                          <Label for="siteNameViews">Site Name<span className="text-danger">*</span></Label>
-                          <select
-                            className="form-select form-select-md"
-                            aria-label=".form-select-md example"
-                            required
-                          >
-                            <option defaultValue="0">Head Office</option>
-                            <option defaultValue="1">Test 1 Office</option>
-                            <option defaultValue="2">Test 2 Office</option>
-                            <option defaultValue="3">Test 3 Office</option>
-                          </select>
-                        </FormGroup>
-                      </Col>
-                      <Col md={3}>
-                        <FormGroup>
-                          <Label for="classViews">Class</Label>
-                          <select
-                            className="form-select form-select-md"
-                            aria-label=".form-select-md example"
-                            required
-                          >
-                            <option defaultValue="0">Lahore</option>
-                            <option defaultValue="1">Test 1 City</option>
-                            <option defaultValue="2">Test 2 City</option>
-                            <option defaultValue="3">Test 3 City</option>
-                          </select>
-                        </FormGroup>
-                      </Col>
-                      <Col md={3}>
-                        <FormGroup>
-                          <Label for="dateViews">Date</Label>
-                          <div className="input-group">
-                            <Flatpickr
-                              className="form-control dash-filter-picker"
-                              placeholder="Select date"
-                              options={{
-                                dateFormat: "d-m-Y",
-                                defaultDate: ["2022-01-20"],
-                              }}
-                            />
-                            <div className="input-group-text bg-primary border-primary text-white"><i className="ri-calendar-2-line"></i></div>
+          <Col lg={12}>
+            <Card>
+              <CardBody>
+                <Form action="#">
+                  <Row className="justify-content-end">
+                    <Col md={3}>
+                      <FormGroup>
+                        <Label for="financialYearViews">Financial Year</Label>
+                        <select
+                          className="form-select form-select-md"
+                          aria-label=".form-select-md example"
+                          required
+                        >
+                          <option defaultValue>2020-2021</option>
+                          <option defaultValue="1">2021-2022</option>
+                          <option defaultValue="2">2023-2024</option>
+                          <option defaultValue="3">2024-2025</option>
+                        </select>
+                      </FormGroup>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col md={3}>
+                      <FormGroup>
+                        <Label for="siteNameViews">
+                          Site Name<span className="text-danger"> *</span>
+                        </Label>
+                        <select
+                          className="form-select form-select-md"
+                          aria-label=".form-select-md example"
+                          required
+                        >
+                          <option defaultValue="0">Head Office</option>
+                          <option defaultValue="1">Test 1 Office</option>
+                          <option defaultValue="2">Test 2 Office</option>
+                          <option defaultValue="3">Test 3 Office</option>
+                        </select>
+                      </FormGroup>
+                    </Col>
+                    <Col md={3}>
+                      <FormGroup>
+                        <Label for="dateToViews">
+                          Date From<span className="text-danger"> *</span>
+                        </Label>
+                        <div className="input-group">
+                          <Flatpickr
+                            className="form-control dash-filter-picker"
+                            placeholder="Select date"
+                            options={{
+                              dateFormat: "d-m-Y",
+                              defaultDate: ["2022-01-20"],
+                            }}
+                          />
+                          <div className="input-group-text bg-primary border-primary text-white">
+                            <i className="ri-calendar-2-line"></i>
                           </div>
-                        </FormGroup>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col md={3}>
-                        <FormGroup>
-                          <Label for="remarksViews">Remarks<span className="text-danger">*</span></Label>
-                          <Input
-                            id="remarks *"
-                            name="remarks *"
-                            placeholder="Enter Remarks"
+                        </div>
+                      </FormGroup>
+                    </Col>
+                    <Col md={3}>
+                      <FormGroup>
+                        <Label for="dateToViews">
+                          Date To<span className="text-danger"> *</span>
+                        </Label>
+                        <div className="input-group">
+                          <Flatpickr
+                            className="form-control dash-filter-picker"
+                            placeholder="Select date"
+                            options={{
+                              dateFormat: "d-m-Y",
+                              defaultDate: ["2022-01-20"],
+                            }}
                           />
-                        </FormGroup>
-                      </Col>
-                      <Col md={3}>
-                        <FormGroup>
-                          <Label for="amountViews">Amount<span className="text-danger">*</span></Label>
-                          <Input
-                            id="amount"
-                            name="amount"
-                            placeholder="Enter Amount"
-                          />
-                        </FormGroup>
-                      </Col>
-                    </Row>
-                    <Button
-                      style={{
-                        background: "transparent",
-                        borderRadius: "50px",
-                        padding: "5px 15px",
-                        border: "1px solid #0080FF",
-                        margin: "10px",
-                        color: "#0080FF",
-                      }}
-                    >
-                      View Receipt
-                      <img src={gridIcon} alt="gridIcon"
-                        style={{ marginLeft: "10px" }} />
-                    </Button>
-                    <Button
-                      style={{
-                        background: "transparent",
-                        borderRadius: "50px",
-                        padding: "5px 25px",
-                        border: "1px solid #FF5652",
-                        color: "#FF5652",
-                      }}
-                    >
-                      Pdf View
-                      <img src={pdfIcon} alt="pdfIcon"
-                        style={{ marginLeft: "10px" }} />
-                    </Button>
-                  </Form>
-                </CardBody>
-              </Card>
-            </Col>
-          </Row>
+                          <div className="input-group-text bg-primary border-primary text-white">
+                            <i className="ri-calendar-2-line"></i>
+                          </div>
+                        </div>
+                      </FormGroup>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col md={3}>
+                      <FormGroup>
+                        <Label for="classViews">Upload Type</Label>
+                        <select
+                          className="form-select form-select-md"
+                          aria-label=".form-select-md example"
+                          required
+                        >
+                          <option defaultValue="0">All</option>
+                          <option defaultValue="1">Test 1 Type</option>
+                          <option defaultValue="2">Test 2 Type</option>
+                          <option defaultValue="3">Test 3 Type</option>
+                        </select>
+                      </FormGroup>
+                    </Col>
+                    <Col md={3}>
+                      <FormGroup>
+                        <Label for="classViews">Prepared By</Label>
+                        <select
+                          className="form-select form-select-md"
+                          aria-label=".form-select-md example"
+                          required
+                        >
+                          <option defaultValue="0">All</option>
+                          <option defaultValue="1">Test 1</option>
+                          <option defaultValue="2">Test 2</option>
+                          <option defaultValue="3">Test 3</option>
+                        </select>
+                      </FormGroup>
+                    </Col>
+                    <Col md={3}>
+                      <FormGroup>
+                        <Label for="classViews">Status</Label>
+                        <select
+                          className="form-select form-select-md"
+                          aria-label=".form-select-md example"
+                          required
+                        >
+                          <option defaultValue="0">Pending</option>
+                          <option defaultValue="1">Approved</option>
+                          <option defaultValue="2">Unapproved</option>
+                          <option defaultValue="3">Rejected</option>
+                        </select>
+                      </FormGroup>
+                    </Col>
+                  </Row>
+                  <Row className=" mb-3"></Row>
+                  <Button
+                    style={{
+                      background: "transparent",
+                      borderRadius: "50px",
+                      padding: "5px 15px",
+                      border: "1px solid #0080FF",
+                      margin: "10px",
+                      color: "#0080FF",
+                    }}
+                  >
+                    View Receipt
+                    <img src={gridIcon} alt="gridIcon" style={{ marginLeft: "10px" }} />
+                  </Button>
+                  <Button
+                    style={{
+                      background: "transparent",
+                      borderRadius: "50px",
+                      padding: "5px 25px",
+                      border: "1px solid #FF5652",
+                      color: "#FF5652",
+                    }}
+                  >
+                    Pdf View
+                    <img src={pdfIcon} alt="pdfIcon" style={{ marginLeft: "10px" }} />
+                  </Button>
+                  <Row className=" mb-3"></Row>
+                </Form>
+              </CardBody>
+            </Card>
+          </Col>
+        </Row>
           <Row>
             <Col lg={12}>
               <Card className="ribbon-box border shadow-none">
@@ -690,7 +735,13 @@ const Views = () => {
                     </MenuItem>
                   ))}
                 </TextField>
+<<<<<<< HEAD
               </Col> 
+=======
+              </Col>
+
+             
+>>>>>>> alishba-fiscal-connect
               <Col md={6}>
               {/* <InputLabel shrink htmlFor="bootstrap-input">
                     Select Expense Account

@@ -75,119 +75,115 @@ const Receipt = () => {
   return (
     <React.Fragment>
       <div className="page-content">
-        <Container fluid>
+      <Container fluid>
+        <BreadCrumb title="Receipt" pageTitle="Receipt" />
           <Row>
-            <Col xs={12}></Col>
-            <Card
-              fluid
-              style={{
-                backgroundColor: "white",
-                padding: "1.3%",
-                margin: "0.3%",
-              }}
-            >
-              <Form>
-                <BreadCrumb title="Receipt" pageTitle="ReceiptPage" />
-                <Row>
-                  <Col
-                    md={3}
-                    style={{
-                      marginLeft: "55rem",
-                    }}
-                  >
-                    <FormGroup>
-                      <Label for="financialYearReceipt">Financial Year</Label>
-                      <select
-                        className="form-select form-select-md"
-                        aria-label=".form-select-md example"
-                        required
+            <Col lg={12}>
+              <Card>
+                <CardBody>
+                  <Form>
+                    <Row>
+                      <Col
+                        md={3}
+                        style={{
+                          marginLeft: "55rem",
+                        }}
                       >
-                        <option selected>2020-2021</option>
-                        <option defaultValue="1">2021-2022</option>
-                        <option defaultValue="2">2023-2024</option>
-                        <option defaultValue="3">2024-2025</option>
-                      </select>
-                    </FormGroup>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col md={3}>
-                    <FormGroup>
-                      <Label for="siteNameReceipt">Site Name</Label>
-                      <select
-                        className="form-select form-select-md"
-                        aria-label=".form-select-md example"
-                        required
-                      >
-                        <option selected>Head Office</option>
-                        <option defaultValue="1">Test 1 Office</option>
-                        <option defaultValue="2">Test 2 Office</option>
-                        <option defaultValue="3">Test 3 Office</option>
-                      </select>
-                    </FormGroup>
-                  </Col>
-                  <Col md={3}>
-                    <FormGroup>
-                      <Label for="classReceipt">Class</Label>
-                      <select
-                        className="form-select form-select-md"
-                        aria-label=".form-select-md example"
-                        required
-                      >
-                        <option selected>Lahore</option>
-                        <option defaultValue="1">Test 1 City</option>
-                        <option defaultValue="2">Test 2 City</option>
-                        <option defaultValue="3">Test 3 City</option>
-                      </select>
-                    </FormGroup>
-                  </Col>
-                  <Col md={3}>
-                    <FormGroup>
-                      <Label for="dateReceipt">Date</Label>
-                      <div className="input-group">
-                        <Flatpickr
-                          className="form-control border-0 dash-filter-picker shadow"
-                          placeholder="Select date"
-                          options={{
-                            dateFormat: "d-m-Y",
-                            defaultDate: ["2022-01-20"],
-                          }}
-                        />
-                        <div
-                          className="input-group-text border-primary text-white"
-                          style={{ background: "#73C1C6", border: "#73C1C6" }}
-                        >
-                          <i className="ri-calendar-2-line"></i>
-                        </div>
-                      </div>
-                    </FormGroup>
-                  </Col>
-                </Row>
-
-                <Row>
-                  <Col md={3}>
-                    <FormGroup>
-                      <Label for="remarksReceipt">Remarks</Label>
-                      <Input
-                        id="remarks *"
-                        name="remarks *"
-                        placeholder="Enter Remarks"
-                      />
-                    </FormGroup>
-                  </Col>
-                  <Col md={3}>
-                    <FormGroup>
-                      <Label for="amountReceipt">Amount</Label>
-                      <Input
-                        id="amount"
-                        name="amount"
-                        placeholder="Enter Amount"
-                      />
-                    </FormGroup>
-                  </Col>
-                </Row>
-
-                <Button
+                        <FormGroup>
+                          <Label for="financialYearReceipt">Financial Year<span className="text-danger"> *</span></Label>
+                          <select
+                            className="form-select form-select-md"
+                            aria-label=".form-select-md example"
+                            required
+                          >
+                            <option defaultValue>2020-2021</option>
+                            <option defaultValue="1">2021-2022</option>
+                            <option defaultValue="2">2023-2024</option>
+                            <option defaultValue="3">2024-2025</option>
+                          </select>
+                        </FormGroup>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col md={3}>
+                        <FormGroup>
+                          <Label for="siteNameReceipt">
+                            Site Name<span className="text-danger"> *</span>
+                          </Label>
+                          <select
+                            className="form-select form-select-md"
+                            aria-label=".form-select-md example"
+                            required
+                          >
+                            <option defaultValue="0">Head Office</option>
+                            <option defaultValue="1">Test 1 Office</option>
+                            <option defaultValue="2">Test 2 Office</option>
+                            <option defaultValue="3">Test 3 Office</option>
+                          </select>
+                        </FormGroup>
+                      </Col>
+                      <Col md={3}>
+                        <FormGroup>
+                          <Label for="classReceipt">Class</Label>
+                          <select
+                            className="form-select form-select-md"
+                            aria-label=".form-select-md example"
+                            required
+                          >
+                            <option defaultValue="0">Lahore</option>
+                            <option defaultValue="1">Test 1 City</option>
+                            <option defaultValue="2">Test 2 City</option>
+                            <option defaultValue="3">Test 3 City</option>
+                          </select>
+                        </FormGroup>
+                      </Col>
+                      <Col md={3}>
+                        <FormGroup>
+                          <Label for="dateReceipt">Date</Label>
+                          <div className="input-group">
+                            <Flatpickr
+                              className="form-control dash-filter-picker"
+                              placeholder="Select date"
+                              options={{
+                                dateFormat: "d-m-Y",
+                                defaultDate: ["2022-01-20"],
+                              }}
+                            />
+                            <div className="input-group-text bg-primary border-primary text-white">
+                              <i className="ri-calendar-2-line"></i>
+                            </div>
+                          </div>
+                        </FormGroup>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col md={3}>
+                        <FormGroup>
+                          <Label for="remarksReceipt">
+                            Remarks<span className="text-danger"> *</span>
+                          </Label>
+                          <Input
+                            id="remarks"
+                            name="remarks"
+                            placeholder="Enter Remarks"
+                          />
+                        </FormGroup>
+                      </Col>
+                      <Col md={4}>
+                        <FormGroup>
+                          <Label for="amountReceipt">
+                            Amount<span className="text-danger"> *</span>
+                          </Label>
+                          <Input
+                            id="amount"
+                            name="amount"
+                            placeholder="Enter Amount"
+                          />
+                        </FormGroup>
+                      </Col>
+                    </Row>
+                    <Row className=" mb-5"></Row>
+                    <Button
                   style={{
                     float: "right",
                     background: "transparent",
@@ -221,17 +217,27 @@ const Receipt = () => {
                 >
                   <img src={attachment} alt="attachmentIcon" />
                 </Button>
-              </Form>
-            </Card>
+                  </Form>
+                </CardBody>
+              </Card>
+            </Col>
           </Row>
           <Row className="mt-4">
             <Col lg={12}>
               <Row>
                 <Col lg={12}>
-                  <Card>
-                    <CardHeader>
-                      <h4 className="card-title mb-6">Attachment File</h4>
-                    </CardHeader>
+                  <Card className="ribbon-box border shadow-none ">
+                    <Row className="g-4 mb-3">
+                      <Col className="">
+                        <div>
+                          <div className="mb-3">
+                            <div className="ribbon ribbon-primary ribbon-shape">
+                              Attachment File
+                            </div>
+                          </div>
+                        </div>
+                      </Col>
+                    </Row>
 
                     <CardBody>
                       <p className="text-muted"></p>
