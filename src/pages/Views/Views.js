@@ -224,12 +224,33 @@ const Views = () => {
   const [taxAmountEditVoucher, setTaxAmountEditVoucher] = useState("");
   const [netAmountEditVoucher, setNetAmountEditVoucher] = useState("");
 
-  const handleSubmit = (event) => {
-    console.log("submitted");
-    console.log(event);
-    console.log(state);
-  };
+  // const handleSubmit = (event) => {
+  //   console.log("submitted");
+  //   console.log(event);
+  //   console.log(state);
+  // };
   
+  const handleSubmit = (event) => {
+    event.preventDefault(); // Prevent the default form submission behavior
+  
+    // Create an object to hold all the user input data
+    const formData = {
+      classEditVoucher,
+      expenseEditVoucher,
+      chequeEditVoucher,
+      remarksEditVoucher,
+      amountEditVoucher,
+      taxRateEditVoucher,
+      taxAmountEditVoucher,
+      netAmountEditVoucher
+      // Add other input fields here if needed
+    };
+  
+    // Log the formData object to the console
+    console.log('Form Data:', formData);
+  
+    // Perform any additional operations here, such as sending data to an API
+  };
 
   // const handleChange = (event) => {
   //   event.persist();
@@ -647,7 +668,7 @@ const Views = () => {
         </Container>
       </div>
 
-      {/* Add Modal */}
+      {/* Edit Modal */}
       <Modal isOpen={modal_list} toggle={() => { tog_list(); }} centered size="lg">
         <ModalHeader className="bg-light p-3" toggle={() => { tog_list(); }} close={<img src={unApproved} alt="pdfIcon" onClick={() => { setmodal_list(false) }} style={{ cursor: 'pointer' }} />}>  Edits voucher </ModalHeader>
 
@@ -669,9 +690,7 @@ const Views = () => {
                     </MenuItem>
                   ))}
                 </TextField>
-              </Col>
-
-             
+              </Col> 
               <Col md={6}>
               {/* <InputLabel shrink htmlFor="bootstrap-input">
                     Select Expense Account
