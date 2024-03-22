@@ -5,12 +5,20 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Link } from "react-router-dom";
  
 
+
 // Import Images
 // import logoLight from "../../assets/images/fiscalconnectlogo.png";
 
 const AuthSlider = () => {
     return (
         <React.Fragment>
+             <style>
+                {`
+                body {
+                    overflow: hidden;
+                }
+                `}
+            </style>
 
             <Col lg={6}>
                 <div className="p-lg-5 p-4 auth-one-bg h-100">

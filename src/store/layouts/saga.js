@@ -138,20 +138,20 @@ function* changePreloader({ payload: preloaderTypes }) {
 function* changeLeftsidebarSizeType({ payload: leftsidebarSizetype }) {
     try {
         switch (leftsidebarSizetype) {
-            case 'lg':
-                yield call(changeHTMLAttribute, "data-sidebar-size", "lg");
-                break;
-            case 'md':
-                yield call(changeHTMLAttribute, "data-sidebar-size", "md");
-                break;
+            // case 'lg':
+            //     yield call(changeHTMLAttribute, "data-sidebar-size", "lg");
+            //     break;
+            // case 'md':
+            //     yield call(changeHTMLAttribute, "data-sidebar-size", "md");
+            //     break;
             case "sm":
                 yield call(changeHTMLAttribute, "data-sidebar-size", "sm");
                 break;
-            case "sm-hover":
-                yield call(changeHTMLAttribute, "data-sidebar-size", "sm-hover");
-                break;
+            // case "sm-hover":
+            //     yield call(changeHTMLAttribute, "data-sidebar-size", "sm-hover");
+            //     break;
             default:
-                yield call(changeHTMLAttribute, "data-sidebar-size", "lg");
+                yield call(changeHTMLAttribute, "data-sidebar-size", "sm");
         }
     } catch (error) {
         // console.log(error);

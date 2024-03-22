@@ -8,9 +8,9 @@ const StoreVisits = () => {
             
             <Col xl={6}>
                         <Card className="ribbon-box border shadow-none ">
-                            <CardHeader>
+                            <div className='mb-4 p-1'>
                             <div className="ribbon ribbon-info ribbon-shape">Spending Overview</div>
-                            </CardHeader >
+                            </div >
                             <div className="card-body">
                                 <DoughnutChart dataColors='["--vz-primary", "--vz-success", "--vz-warning", "--vz-danger", "--vz-info"]'/>
                             </div>

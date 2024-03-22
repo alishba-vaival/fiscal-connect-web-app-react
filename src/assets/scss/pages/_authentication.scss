@@ -24,9 +24,11 @@
     @media (max-width: 575.98px) {
         height: 280px;
     }
+
+  
 }
- 
-.auth-one-bg{
+
+.auth-one-bg{  
     background-image: url("../../images/figma/Frame.svg");
     background-position: center 50px;
     background-repeat: no-repeat;
@@ -36,6 +38,12 @@
     .bg-overlay{
         background: linear-gradient(to right, darken($primary, 0%), $primary);
         opacity: 0;
+    }
+   
+}
+@media (max-width: 768px) {
+    .auth-one-bg {
+        display: none;
     }
 }
 .carousel-inner p {

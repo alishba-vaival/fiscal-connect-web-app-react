@@ -21,7 +21,7 @@ import Ticket from '../pages/Tickets/Tickets'
 import TicketCategory from '../pages/Tickets/TicketCategory'
 
 // NonAuthentication 
-import Login from '../pages/Authentication/Login';
+import Login from '../pages/Authentication/Login'; 
 import Register from '../pages/Authentication/Register';
 import ForgetPasswordPage from '../pages/Authentication/ForgotPasswod';
 import ResetPassword from '../pages/Authentication/ResetPassword';
@@ -69,7 +69,7 @@ const authProtectedRoutes = [
 const publicRoutes = [
   // Authentication Page
   { path: "/logout", component: <Logout /> },
-  { path: "/login", component: <Login /> },
+  { path: "/login", component: <Login /> }, 
   { path: "/forgot-password", component: <ForgetPasswordPage /> },
   { path: "/register", component: <Register /> },
   { path: "/resetPassword", component: <ResetPassword /> }

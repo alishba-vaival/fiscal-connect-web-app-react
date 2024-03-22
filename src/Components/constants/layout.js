@@ -1,8 +1,8 @@
 const layoutTypes = {
-  HORIZONTAL: "horizontal",
+  // HORIZONTAL: "horizontal",
   VERTICAL: "vertical",
-  TWOCOLUMN: "twocolumn",
-  SEMIBOX : "semibox",
+  // TWOCOLUMN: "twocolumn",
+  // SEMIBOX : "semibox",
 };
 
 const layoutModeTypes = {
@@ -33,10 +33,10 @@ const topbarThemeTypes = {
 };
 
 const leftsidbarSizeTypes = {
-  DEFAULT: "lg",
-  COMPACT: "md",
+  DEFAULT: "sm",
+  COMPACT: "sm",
   SMALLICON: "sm",
-  SMALLHOVER: "sm-hover"
+  SMALLHOVER: "sm"
 };
 
 const leftSidebarViewTypes = {
