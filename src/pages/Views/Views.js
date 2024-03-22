@@ -1,5 +1,4 @@
 import React, { useState, useCallback } from "react";
-import React, { useState, useCallback } from "react";
 import DeleteModal from "../../Components/Common/DeleteModal";
 import { Link } from 'react-router-dom';
 import approved from '../../assets/images/figma/approved.svg';
@@ -13,12 +12,10 @@ import user2 from '../../assets/images/users/avatar-2.jpg';
 import user3 from '../../assets/images/users/avatar-3.jpg';
 import user4 from '../../assets/images/users/avatar-4.jpg';
 import user5 from '../../assets/images/users/avatar-5.jpg';
-import user6 from '../../assets/images/users/avatar-6.jpg';
-import { FaCheck,FaEye } from "react-icons/fa"; 
+import user6 from '../../assets/images/users/avatar-6.jpg'; 
+import { FaCheck, FaEye } from "react-icons/fa";
 import { IoMdAddCircleOutline } from "react-icons/io";
 import { FaCloudUploadAlt } from "react-icons/fa";
-import { Link } from "react-router-dom";
-
 import {
   Col,
   Container,
@@ -172,8 +169,8 @@ const Views = () => {
 
   const [modal_togFirst, setmodal_togFirst] = useState(false);
   function tog_togFirst() {
-      setmodal_togFirst(!modal_togFirst);
-  } 
+    setmodal_togFirst(!modal_togFirst);
+  }
 
   // Delete Multiple
   const [selectedCheckBoxDelete, setSelectedCheckBoxDelete] = useState([]);
@@ -197,9 +194,7 @@ const Views = () => {
 
   const deleteCheckbox = () => {
     const ele = document.querySelectorAll(".viewCheckBox:checked");
-    ele.length > 0
-      ? setIsMultiDeleteButton(true)
-      : setIsMultiDeleteButton(false);
+    ele.length > 0 ? setIsMultiDeleteButton(true) : setIsMultiDeleteButton(false);
     setSelectedCheckBoxDelete(ele);
   };
   /**
@@ -255,303 +250,168 @@ const Views = () => {
         <Container fluid>
           <BreadCrumb title="Views" pageTitle="ViewsPage" />
           <Row>
-            <Col lg={12} >
-              <Card   >
-                <CardBody>
-                  <Form action="#">
-                    <Row className="justify-content-end">
-                      <Col md={3}>
-                        <FormGroup>
-                          <Label for="financialYearViews">Financial Year</Label>
-                          <select
-                            className="form-select form-select-md"
-                            aria-label=".form-select-md example"
-                            required
-                          >
-                            <option defaultValue>2020-2021</option>
-                            <option defaultValue="1">2021-2022</option>
-                            <option defaultValue="2">2023-2024</option>
-                            <option defaultValue="3">2024-2025</option>
-                          </select>
-                        </FormGroup>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col md={3}>
-                        <FormGroup>
-                          <Label for="siteNameViews">Site Name<span className="text-danger">*</span></Label>
-                          <select
-                            className="form-select form-select-md"
-                            aria-label=".form-select-md example"
-                            required
-                          >
-                            <option defaultValue="0">Head Office</option>
-                            <option defaultValue="1">Test 1 Office</option>
-                            <option defaultValue="2">Test 2 Office</option>
-                            <option defaultValue="3">Test 3 Office</option>
-                          </select>
-                        </FormGroup>
-                      </Col>
-                      <Col md={3}>
-                        <FormGroup>
-                          <Label for="classViews">Class</Label>
-                          <select
-                            className="form-select form-select-md"
-                            aria-label=".form-select-md example"
-                            required
-                          >
-                            <option defaultValue="0">Lahore</option>
-                            <option defaultValue="1">Test 1 City</option>
-                            <option defaultValue="2">Test 2 City</option>
-                            <option defaultValue="3">Test 3 City</option>
-                          </select>
-                        </FormGroup>
-                      </Col>
-                      <Col md={3}>
-                        <FormGroup>
-                          <Label for="dateViews">Date</Label>
-                          <div className="input-group">
-                            <Flatpickr
-                              className="form-control dash-filter-picker"
-                              placeholder="Select date"
-                              options={{
-                                dateFormat: "d-m-Y",
-                                defaultDate: ["2022-01-20"],
-                              }}
-                            />
-                            <div className="input-group-text bg-primary border-primary text-white"><i className="ri-calendar-2-line"></i></div>
-                          </div>
-                        </FormGroup>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col md={3}>
-                        <FormGroup>
-                          <Label for="remarksViews">Remarks<span className="text-danger">*</span></Label>
-                          <Input
-                            id="remarks *"
-                            name="remarks *"
-                            placeholder="Enter Remarks"
+          <Col lg={12}>
+            <Card>
+              <CardBody>
+                <Form action="#">
+                  <Row className="justify-content-end">
+                    <Col md={3}>
+                      <FormGroup>
+                        <Label for="financialYearViews">Financial Year</Label>
+                        <select
+                          className="form-select form-select-md"
+                          aria-label=".form-select-md example"
+                          required
+                        >
+                          <option defaultValue>2020-2021</option>
+                          <option defaultValue="1">2021-2022</option>
+                          <option defaultValue="2">2023-2024</option>
+                          <option defaultValue="3">2024-2025</option>
+                        </select>
+                      </FormGroup>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col md={3}>
+                      <FormGroup>
+                        <Label for="siteNameViews">
+                          Site Name<span className="text-danger"> *</span>
+                        </Label>
+                        <select
+                          className="form-select form-select-md"
+                          aria-label=".form-select-md example"
+                          required
+                        >
+                          <option defaultValue="0">Head Office</option>
+                          <option defaultValue="1">Test 1 Office</option>
+                          <option defaultValue="2">Test 2 Office</option>
+                          <option defaultValue="3">Test 3 Office</option>
+                        </select>
+                      </FormGroup>
+                    </Col>
+                    <Col md={3}>
+                      <FormGroup>
+                        <Label for="dateToViews">
+                          Date From<span className="text-danger"> *</span>
+                        </Label>
+                        <div className="input-group">
+                          <Flatpickr
+                            className="form-control dash-filter-picker"
+                            placeholder="Select date"
+                            options={{
+                              dateFormat: "d-m-Y",
+                              defaultDate: ["2022-01-20"],
+                            }}
                           />
-                        </FormGroup>
-                      </Col>
-                      <Col md={3}>
-                        <FormGroup>
-                          <Label for="amountViews">Amount<span className="text-danger">*</span></Label>
-                          <Input
-                            id="amount"
-                            name="amount"
-                            placeholder="Enter Amount"
+                          <div className="input-group-text bg-primary border-primary text-white">
+                            <i className="ri-calendar-2-line"></i>
+                          </div>
+                        </div>
+                      </FormGroup>
+                    </Col>
+                    <Col md={3}>
+                      <FormGroup>
+                        <Label for="dateToViews">
+                          Date To<span className="text-danger"> *</span>
+                        </Label>
+                        <div className="input-group">
+                          <Flatpickr
+                            className="form-control dash-filter-picker"
+                            placeholder="Select date"
+                            options={{
+                              dateFormat: "d-m-Y",
+                              defaultDate: ["2022-01-20"],
+                            }}
                           />
-                        </FormGroup>
-                      </Col>
-                    </Row>
-                    <Button
-                      style={{
-                        background: "transparent",
-                        borderRadius: "50px",
-                        padding: "5px 15px",
-                        border: "1px solid #0080FF",
-                        margin: "10px",
-                        color: "#0080FF",
-                      }}
-                    >
-                      View Receipt
-                      <img src={gridIcon} alt="gridIcon"
-                        style={{ marginLeft: "10px" }} />
-                    </Button>
-                    <Button
-                      style={{
-                        background: "transparent",
-                        borderRadius: "50px",
-                        padding: "5px 25px",
-                        border: "1px solid #FF5652",
-                        color: "#FF5652",
-                      }}
-                    >
-                      Pdf View
-                      <img src={pdfIcon} alt="pdfIcon"
-                        style={{ marginLeft: "10px" }} />
-                    </Button>
-                  </Form>
-                </CardBody>
-        <BreadCrumb title="Views" pageTitle="Views" />
-          <Row>
-            <Col lg={12}>
-              <Card>
-                <CardBody>
-                  <Form>
-                    <Row>
-                      <Col
-                        md={3}
-                        style={{
-                          marginLeft: "55rem",
-                        }}
-                      >
-                        <FormGroup>
-                          <Label for="financialYearViews">Financial Year</Label>
-                          <select
-                            className="form-select form-select-md"
-                            aria-label=".form-select-md example"
-                            required
-                          >
-                            <option defaultValue>2020-2021</option>
-                            <option defaultValue="1">2021-2022</option>
-                            <option defaultValue="2">2023-2024</option>
-                            <option defaultValue="3">2024-2025</option>
-                          </select>
-                        </FormGroup>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col md={3}>
-                        <FormGroup>
-                          <Label for="siteNameViews">
-                            Site Name<span className="text-danger"> *</span>
-                          </Label>
-                          <select
-                            className="form-select form-select-md"
-                            aria-label=".form-select-md example"
-                            required
-                          >
-                            <option defaultValue="0">Head Office</option>
-                            <option defaultValue="1">Test 1 Office</option>
-                            <option defaultValue="2">Test 2 Office</option>
-                            <option defaultValue="3">Test 3 Office</option>
-                          </select>
-                        </FormGroup>
-                      </Col>
-                      
-                      <Col md={3}>
-                        <FormGroup>
-                          <Label for="dateToViews">Date From<span className="text-danger"> *</span></Label>
-                          <div className="input-group">
-                            <Flatpickr
-                              className="form-control dash-filter-picker"
-                              placeholder="Select date"
-                              options={{
-                                dateFormat: "d-m-Y",
-                                defaultDate: ["2022-01-20"],
-                              }}
-                            />
-                            <div className="input-group-text bg-primary border-primary text-white">
-                              <i className="ri-calendar-2-line"></i>
-                            </div>
+                          <div className="input-group-text bg-primary border-primary text-white">
+                            <i className="ri-calendar-2-line"></i>
                           </div>
-                        </FormGroup>
-                      </Col>
-                      <Col md={3}>
-                        <FormGroup>
-                          <Label for="dateToViews">Date To<span className="text-danger"> *</span></Label>
-                          <div className="input-group">
-                            <Flatpickr
-                              className="form-control dash-filter-picker"
-                              placeholder="Select date"
-                              options={{
-                                dateFormat: "d-m-Y",
-                                defaultDate: ["2022-01-20"],
-                              }}
-                            />
-                            <div className="input-group-text bg-primary border-primary text-white">
-                              <i className="ri-calendar-2-line"></i>
-                            </div>
-                          </div>
-                        </FormGroup>
-                      </Col>
-                    </Row>
-                    <Row>
+                        </div>
+                      </FormGroup>
+                    </Col>
+                  </Row>
+                  <Row>
                     <Col md={3}>
-                        <FormGroup>
-                          <Label for="classViews">Upload Type</Label>
-                          <select
-                            className="form-select form-select-md"
-                            aria-label=".form-select-md example"
-                            required
-                          >
-                            <option defaultValue="0">All</option>
-                            <option defaultValue="1">Test 1 Type</option>
-                            <option defaultValue="2">Test 2 Type</option>
-                            <option defaultValue="3">Test 3 Type</option>
-                          </select>
-                        </FormGroup>
-                      </Col>
+                      <FormGroup>
+                        <Label for="classViews">Upload Type</Label>
+                        <select
+                          className="form-select form-select-md"
+                          aria-label=".form-select-md example"
+                          required
+                        >
+                          <option defaultValue="0">All</option>
+                          <option defaultValue="1">Test 1 Type</option>
+                          <option defaultValue="2">Test 2 Type</option>
+                          <option defaultValue="3">Test 3 Type</option>
+                        </select>
+                      </FormGroup>
+                    </Col>
                     <Col md={3}>
-                        <FormGroup>
-                          <Label for="classViews">Prepared By</Label>
-                          <select
-                            className="form-select form-select-md"
-                            aria-label=".form-select-md example"
-                            required
-                          >
-                            <option defaultValue="0">All</option>
-                            <option defaultValue="1">Test 1</option>
-                            <option defaultValue="2">Test 2</option>
-                            <option defaultValue="3">Test 3</option>
-                          </select>
-                        </FormGroup>
-                      </Col>
+                      <FormGroup>
+                        <Label for="classViews">Prepared By</Label>
+                        <select
+                          className="form-select form-select-md"
+                          aria-label=".form-select-md example"
+                          required
+                        >
+                          <option defaultValue="0">All</option>
+                          <option defaultValue="1">Test 1</option>
+                          <option defaultValue="2">Test 2</option>
+                          <option defaultValue="3">Test 3</option>
+                        </select>
+                      </FormGroup>
+                    </Col>
                     <Col md={3}>
-                        <FormGroup>
-                          <Label for="classViews">Status</Label>
-                          <select
-                            className="form-select form-select-md"
-                            aria-label=".form-select-md example"
-                            required
-                          >
-                            <option defaultValue="0">Pending</option>
-                            <option defaultValue="1">Approved</option>
-                            <option defaultValue="2">Unapproved</option>
-                            <option defaultValue="3">Rejected</option>
-                          </select>
-                        </FormGroup>
-                      </Col>
-                      
-                    </Row>
-                    <Row className=" mb-3"></Row>
-                    <Button
-                      style={{
-                        background: "transparent",
-                        borderRadius: "50px",
-                        padding: "5px 15px",
-                        border: "1px solid #0080FF",
-                        margin: "10px",
-                        color: "#0080FF",
-                      }}
-                    >
-                      View Receipt
-                      <img
-                        src={gridIcon}
-                        alt="gridIcon"
-                        style={{ marginLeft: "10px" }}
-                      />
-                    </Button>
-                    <Button
-                      style={{
-                        background: "transparent",
-                        borderRadius: "50px",
-                        padding: "5px 25px",
-                        border: "1px solid #FF5652",
-                        color: "#FF5652",
-                      }}
-                    >
-                      Pdf View
-                      <img
-                        src={pdfIcon}
-                        alt="pdfIcon"
-                        style={{ marginLeft: "10px" }}
-                      />
-                    </Button>
-                    <Row className=" mb-3"></Row>
-                  </Form>
-                </CardBody>
-              </Card>
-            </Col>
-          </Row>
-          
+                      <FormGroup>
+                        <Label for="classViews">Status</Label>
+                        <select
+                          className="form-select form-select-md"
+                          aria-label=".form-select-md example"
+                          required
+                        >
+                          <option defaultValue="0">Pending</option>
+                          <option defaultValue="1">Approved</option>
+                          <option defaultValue="2">Unapproved</option>
+                          <option defaultValue="3">Rejected</option>
+                        </select>
+                      </FormGroup>
+                    </Col>
+                  </Row>
+                  <Row className=" mb-3"></Row>
+                  <Button
+                    style={{
+                      background: "transparent",
+                      borderRadius: "50px",
+                      padding: "5px 15px",
+                      border: "1px solid #0080FF",
+                      margin: "10px",
+                      color: "#0080FF",
+                    }}
+                  >
+                    View Receipt
+                    <img src={gridIcon} alt="gridIcon" style={{ marginLeft: "10px" }} />
+                  </Button>
+                  <Button
+                    style={{
+                      background: "transparent",
+                      borderRadius: "50px",
+                      padding: "5px 25px",
+                      border: "1px solid #FF5652",
+                      color: "#FF5652",
+                    }}
+                  >
+                    Pdf View
+                    <img src={pdfIcon} alt="pdfIcon" style={{ marginLeft: "10px" }} />
+                  </Button>
+                  <Row className=" mb-3"></Row>
+                </Form>
+              </CardBody>
+            </Card>
+          </Col>
+        </Row>
           <Row>
             <Col lg={12}>
               <Card className="ribbon-box border shadow-none">
-              <Card className="ribbon-box border shadow-none  ">
                 <CardBody>
                   <div id="customerList">
                     <Row className="mb-4">
@@ -559,14 +419,6 @@ const Views = () => {
                         <div className="mb-3">
                           <div className="ribbon ribbon-primary ribbon-shape">View Daily Work</div>
                         </div>
-                  <Row className=" mb-3"></Row>
-                    <Row className="g-4 mb-3">
-                      <Col>
-                          <div className="mb-3">
-                            <div className="ribbon ribbon-primary ribbon-shape">
-                              View Daily Work
-                            </div>
-                          </div>
                       </Col>
                       <Col className="col-sm">
                         <div className="d-flex justify-content-sm-end">
@@ -584,12 +436,6 @@ const Views = () => {
                               Approved
                               <img src={approved} alt="gridIcon"
                                 style={{ marginLeft: "10px" }} />
-                              Approved
-                              <img
-                                src={approved}
-                                alt="approvedIcon"
-                                style={{ marginLeft: "10px" }}
-                              />
                             </Button>
                             <Button
                               style={{
@@ -603,85 +449,47 @@ const Views = () => {
                               Un-Approved
                               <img src={unApproved} alt="pdfIcon"
                                 style={{ marginLeft: "10px" }} />
-                              <img
-                                src={unApproved}
-                                alt="pdfIcon"
-                                style={{ marginLeft: "10px" }}
-                              />
                             </Button>
                           </div>
                         </div>
                       </Col>
                     </Row>
-                    <Row className=" mb-3"></Row>
-                     {/* Table  */}
                     <div className="table-responsive table-card mt-3 mb-1">
-                      <table
-                        className="table align-middle table-nowrap"
-                        id="customerTable"
-                      >
+                      <table className="table align-middle table-nowrap" id="customerTable">
                         <thead className="table-light">
                           <tr>
                             <th data-sort="customer_name">Sr#</th>
-                            <th className="sort" data-sort="email">
-                              Doc.#
-                            </th>
-                            <th className="sort" data-sort="phone">
-                              Class
-                            </th>
-                            <th className="sort" data-sort="phone">
-                              Expense Head
-                            </th>
-                            <th className="sort" data-sort="date">
-                              Date
-                            </th>
-                            <th className="sort" data-sort="status">
-                              User
-                            </th>
-                            <th className="sort" data-sort="action">
-                              Site
-                            </th>
+                            <th className="sort" data-sort="email">Doc.#</th>
+                            <th className="sort" data-sort="phone">Class</th>
+                            <th className="sort" data-sort="phone">Expense Head</th>
+                            <th className="sort" data-sort="date">Date</th>
+                            <th className="sort" data-sort="status">User</th>
+                            <th className="sort" data-sort="action">Site</th>
                             <th data-sort="phone">Amount</th>
-                            <th className="sort" data-sort="date">
-                              Status
-                            </th>
-                            <th className="sort" data-sort="status">
-                              Options
-                            </th>
+                            <th className="sort" data-sort="date">Status</th>
+                            <th className="sort" data-sort="status">Options</th>
                             <th scope="col" style={{ width: "50px" }}>
                               <div className="form-check">
-                                <input
-                                  className="form-check-input  "
-                                  type="checkbox"
-                                  id="checkBoxAll"
-                                  value="option"
-                                  onClick={() => checkedAll()}
-                                />
+                                <input className="form-check-input  " type="checkbox" id="checkBoxAll" value="option" onClick={() => checkedAll()} />
                               </div>
                             </th>
                           </tr>
                         </thead>
                         <tbody className="list form-check-all">
                           <tr>
-                          <tr>
                             <td className="customer_name">1</td>
                             <td className="email">CASH-7135</td>
                             <td className="phone">PROJECT 1</td>
-                            <td className="date">
-                              [600-01-17-0001] ACCOUNTANCY CHARGES
-                            </td>
+                            <td className="date">[600-01-17-0001] ACCOUNTANCY CHARGES</td>
                             <td className="customer_name">15-09-2024</td>
                             <td className="email">demo@vs.com</td>
                             <td className="phone">LAHORE</td>
                             <td className="date">1,000</td>
-                            <td className="status">
-                              <span className="badge badge-soft-success text-uppercase">
-                                DRAFTED
-                              </span>
-                            </td>
+                            <td className="status"><span className="badge badge-soft-success text-uppercase">DRAFTED</span></td>
                             <td>
                               <div className="d-flex gap-2">
                                 <ul className="list-inline hstack gap-2 mb-0">
+
                                   <li className="list-inline-item">
                                     <UncontrolledDropdown>
                                       <DropdownToggle
@@ -694,36 +502,25 @@ const Views = () => {
                                       <DropdownMenu className="dropdown-menu-end">
                                         <DropdownItem
                                           className="dropdown-item edit-item-btn"
-                                          onClick={() => {
-                                            tog_list();
-                                          }}
+                                          onClick={() => { tog_list(); }}
                                         >
                                           <i className="align-bottom me-2">
-                                            <img src={edit} alt="editIcon" />
-                                          </i>{" "}
+                                            <img src={edit} alt="editIcon" /></i>{" "}
                                           Edit
                                         </DropdownItem>
                                         <DropdownItem
                                           className="dropdown-item remove-item-btn"
-                                          onClick={() => {
-                                            onClickDelete();
-                                          }}
+                                          onClick={() => { onClickDelete(); }}
                                         >
                                           <i className="align-bottom me-2">
-                                            <img src={trash} alt="editIcon" />{" "}
-                                          </i>{" "}
+                                            <img src={trash} alt="editIcon" />  </i>{" "}
                                           Delete
                                         </DropdownItem>
                                         <DropdownItem className="dropdown-item"
-                                        onClick={() => tog_togFirst()}
-                                        
+                                          onClick={() => tog_togFirst()}
                                         >
                                           <i className="align-bottom me-2">
-                                            <img
-                                              src={attachment}
-                                              alt="editIcon"
-                                            />{" "}
-                                          </i>{" "}
+                                            <img src={attachment} alt="editIcon" /> </i>{" "}
                                           View Attachment
                                         </DropdownItem>
                                       </DropdownMenu>
@@ -737,33 +534,17 @@ const Views = () => {
                                 <input className="form-check-input viewCheckBox" type="checkbox" name="chk_child" value="option1" />
                               </div>
                             </th>
-                              <div className="form-check">
-                                <input
-                                  className="form-check-input viewCheckBox"
-                                  type="checkbox"
-                                  name="chk_child"
-                                  value="option1"
-                                />
-                              </div>
-                            </th>
                           </tr>
-                          <tr>
                           <tr>
                             <td className="customer_name">2</td>
                             <td className="email">CASH-7135</td>
                             <td className="phone">PROJECT 1</td>
-                            <td className="date">
-                              [600-01-17-0001] ACCOUNTANCY CHARGES
-                            </td>
+                            <td className="date">[600-01-17-0001] ACCOUNTANCY CHARGES</td>
                             <td className="customer_name">15-09-2024</td>
                             <td className="email">demo@vs.com</td>
                             <td className="phone">LAHORE</td>
                             <td className="date">1,000</td>
-                            <td className="status">
-                              <span className="badge badge-soft-success text-uppercase">
-                                DRAFTED
-                              </span>
-                            </td>
+                            <td className="status"><span className="badge badge-soft-success text-uppercase">DRAFTED</span></td>
                             <td>
                               <div className="d-flex gap-2">
                                 <ul className="list-inline hstack gap-2 mb-0">
@@ -777,44 +558,27 @@ const Views = () => {
                                         <i className="ri-more-fill align-middle"></i>
                                       </DropdownToggle>
                                       <DropdownMenu className="dropdown-menu-end">
-                                      <DropdownMenu className="dropdown-menu-end">
                                         <DropdownItem
                                           className="dropdown-item edit-item-btn"
-                                          onClick={() => {
-                                            tog_list();
-                                          }}
+                                          onClick={() => { tog_list(); }}
                                         >
                                           <i className="align-bottom me-2">
                                             <img src={edit} alt="editIcon" /></i>{" "}
-                                            <img src={edit} alt="editIcon" />
-                                          </i>{" "}
                                           Edit
                                         </DropdownItem>
                                         <DropdownItem
                                           className="dropdown-item remove-item-btn"
-                                          onClick={() => {
-                                            onClickDelete();
-                                          }}
+                                          onClick={() => { onClickDelete(); }}
                                         >
                                           <i className="align-bottom me-2">
                                             <img src={trash} alt="editIcon" />  </i>{" "}
-                                            <img src={trash} alt="editIcon" />{" "}
-                                          </i>{" "}
                                           Delete
                                         </DropdownItem>
-                                        <DropdownItem className="dropdown-item"  
-                                        onClick={() => tog_togFirst()}
-                                        <DropdownItem
-                                          className="dropdown-item"
-                                          href="#"
+                                        <DropdownItem className="dropdown-item"
+                                          onClick={() => tog_togFirst()}
                                         >
                                           <i className="align-bottom me-2">
                                             <img src={attachment} alt="editIcon" /> </i>{" "}
-                                            <img
-                                              src={attachment}
-                                              alt="editIcon"
-                                            />{" "}
-                                          </i>{" "}
                                           View Attachment
                                         </DropdownItem>
                                       </DropdownMenu>
@@ -828,33 +592,17 @@ const Views = () => {
                                 <input className="form-check-input viewCheckBox" type="checkbox" name="chk_child" value="option1" />
                               </div>
                             </th>
-                              <div className="form-check">
-                                <input
-                                  className="form-check-input viewCheckBox"
-                                  type="checkbox"
-                                  name="chk_child"
-                                  value="option1"
-                                />
-                              </div>
-                            </th>
                           </tr>
-                          <tr>
                           <tr>
                             <td className="customer_name">3</td>
                             <td className="email">CASH-7135</td>
                             <td className="phone">PROJECT 1</td>
-                            <td className="date">
-                              [600-01-17-0001] ACCOUNTANCY CHARGES
-                            </td>
+                            <td className="date">[600-01-17-0001] ACCOUNTANCY CHARGES</td>
                             <td className="customer_name">15-09-2024</td>
                             <td className="email">demo@vs.com</td>
                             <td className="phone">LAHORE</td>
                             <td className="date">1,000</td>
-                            <td className="status">
-                              <span className="badge badge-soft-success text-uppercase">
-                                DRAFTED
-                              </span>
-                            </td>
+                            <td className="status"><span className="badge badge-soft-success text-uppercase">DRAFTED</span></td>
                             <td>
                               <div className="d-flex gap-2">
                                 <ul className="list-inline hstack gap-2 mb-0">
@@ -868,44 +616,27 @@ const Views = () => {
                                         <i className="ri-more-fill align-middle"></i>
                                       </DropdownToggle>
                                       <DropdownMenu className="dropdown-menu-end">
-                                      <DropdownMenu className="dropdown-menu-end">
                                         <DropdownItem
                                           className="dropdown-item edit-item-btn"
-                                          onClick={() => {
-                                            tog_list();
-                                          }}
+                                          onClick={() => { tog_list(); }}
                                         >
                                           <i className="align-bottom me-2">
                                             <img src={edit} alt="editIcon" /></i>{" "}
-                                            <img src={edit} alt="editIcon" />
-                                          </i>{" "}
                                           Edit
                                         </DropdownItem>
                                         <DropdownItem
                                           className="dropdown-item remove-item-btn"
-                                          onClick={() => {
-                                            onClickDelete();
-                                          }}
+                                          onClick={() => { onClickDelete(); }}
                                         >
                                           <i className="align-bottom me-2">
                                             <img src={trash} alt="editIcon" />  </i>{" "}
-                                            <img src={trash} alt="editIcon" />{" "}
-                                          </i>{" "}
                                           Delete
                                         </DropdownItem>
-                                        <DropdownItem className="dropdown-item"  
+                                        <DropdownItem className="dropdown-item"
                                           onClick={() => tog_togFirst()}
-                                        <DropdownItem
-                                          className="dropdown-item"
-                                          href="#"
                                         >
                                           <i className="align-bottom me-2">
                                             <img src={attachment} alt="editIcon" /> </i>{" "}
-                                            <img
-                                              src={attachment}
-                                              alt="editIcon"
-                                            />{" "}
-                                          </i>{" "}
                                           View Attachment
                                         </DropdownItem>
                                       </DropdownMenu>
@@ -919,41 +650,23 @@ const Views = () => {
                                 <input className="form-check-input viewCheckBox" type="checkbox" name="chk_child" value="option1" onChange={() => deleteCheckbox()} />
                               </div>
                             </th>
-                              <div className="form-check">
-                                <input
-                                  className="form-check-input viewCheckBox"
-                                  type="checkbox"
-                                  name="chk_child"
-                                  value="option1"
-                                  onChange={() => deleteCheckbox()}
-                                />
-                              </div>
-                            </th>
                           </tr>
                         </tbody>
                       </table>
                       <div className="noresult" style={{ display: "none" }}>
                         <div className="text-center">
-                          <lord-icon
-                            src="https://cdn.lordicon.com/msoeawqm.json"
-                            trigger="loop"
-                            colors="primary:#121331,secondary:#08a88a"
-                            style={{ width: "75px", height: "75px" }}
-                          ></lord-icon>
+                          <lord-icon src="https://cdn.lordicon.com/msoeawqm.json" trigger="loop"
+                            colors="primary:#121331,secondary:#08a88a" style={{ width: "75px", height: "75px" }}>
+                          </lord-icon>
                           <h5 className="mt-2">Sorry! No Result Found</h5>
-                          <p className="text-muted mb-0">
-                            We've searched more than 150+ Orders We did not find
-                            any orders for you search.
-                          </p>
+                          <p className="text-muted mb-0">We've searched more than 150+ Orders We did not find any
+                            orders for you search.</p>
                         </div>
                       </div>
                     </div>
                     <div className="d-flex justify-content-end">
                       <div className="pagination-wrap hstack gap-2">
-                        <Link
-                          className="page-item pagination-prev disabled"
-                          to="#"
-                        >
+                        <Link className="page-item pagination-prev disabled" to="#">
                           Previous
                         </Link>
                         <ul className="pagination listjs-pagination mb-0"></ul>
@@ -967,245 +680,137 @@ const Views = () => {
               </Card>
             </Col>
           </Row>
-          
         </Container>
       </div>
 
       {/* Add Modal */}
       <Modal isOpen={modal_list} toggle={() => { tog_list(); }} centered size="lg">
-        <ModalHeader className="bg-light p-3" toggle={() => { tog_list(); }} close={<img src={unApproved} alt="pdfIcon" onClick={() => {setmodal_list(false)}} style={{ cursor: 'pointer' }} />}>  Edits voucher </ModalHeader>
-      <Modal
-        isOpen={modal_list}
-        toggle={() => {
-          tog_list();
-        }}
-        centered
-      >
-        <ModalHeader
-          className="bg-light p-3"
-          toggle={() => {
-            tog_list();
-          }}
-          close={
-            <img
-              src={unApproved}
-              alt="pdfIcon"
-              onClick={() => setmodal_list(false)}
-              style={{ cursor: "pointer" }}
-            />
-          }
-        >
-          {" "}
-          Edits voucher{" "}
-        </ModalHeader>
-        <form className="tablelist-form">
+        <ModalHeader className="bg-light p-3" toggle={() => { tog_list(); }} close={<img src={unApproved} alt="pdfIcon" onClick={() => { setmodal_list(false) }} style={{ cursor: 'pointer' }} />}>  Edits voucher </ModalHeader>
+
+        <ValidatorForm onSubmit={handleSubmit} onError={() => null}>
           <ModalBody>
             <Row>
-              <Col md={6}>
-                <FormGroup>
-                  <Label for="classViews">Class</Label>
-                  <select
-                    className="form-select form-select-md"
-                    aria-label=".form-select-md example"
-                    required
-                  >
-                    <option defaultValue="0">Lahore</option>
-                    <option defaultValue="1">Test 1 City</option>
-                    <option defaultValue="2">Test 2 City</option>
-                    <option defaultValue="3">Test 3 City</option>
-                  </select>
-                </FormGroup>
+            <Col md={6}>
+              <TextField
+                  id="outlined-select-currency"
+                  select
+                  label="Class" 
+                  size="small" 
+                  value={classEditVoucher}
+                  onChange= {(e) => setClassEditVoucher(e.target.value)}
+                >
+                  {classes.map((option) => (
+                    <MenuItem key={option.value} value={option.value}>
+                      {option.label}
+                    </MenuItem>
+                  ))}
+                </TextField>
               </Col>
+
+             
               <Col md={6}>
-                <FormGroup>
-                  <Label for="classViews">Select Expense Account <span className="text-danger">*</span></Label>
-                  <select
-                    className="form-select form-select-md"
-                    aria-label=".form-select-md example"
-                    required
-                  >
-                    <option defaultValue="0">Lahore</option>
-                    <option defaultValue="1">Test 1 City</option>
-                    <option defaultValue="2">Test 2 City</option>
-                    <option defaultValue="3">Test 3 City</option>
-                  </select>
-                </FormGroup>
-              </Col>
-            </Row>
-            <Row>
-              <Col md={6}>
-                <FormGroup>
-                  <Label for="amountViews">Cheque No#</Label>
-                  <Input
-                    id="amount"
-                    name="amount"
-                    placeholder="Enter Amount"
-                  />
-                </FormGroup>
-              </Col>
-              <Col md={6}>
-                <FormGroup>
-                  <Label for="remarksViews">Remarks<span className="text-danger">*</span></Label>
-                  <Input
-                    id="remarks *"
-                    name="remarks *"
-                    placeholder="Enter Remarks"
-                  />
-                </FormGroup>
-              </Col>
-            </Row>
-            <Row>
-              <Col md={6}>
-                <FormGroup>
-                  <Label for="remarksViews">Amount <span className="text-danger">*</span></Label>
-                  <Input
-                    id="remarks *"
-                    name="remarks *"
-                    placeholder="Enter Remarks"
-                  />
-                </FormGroup>
-              </Col>
-              <Col md={6}>
-                <FormGroup>
-                  <Label for="classViews">Select Tax Rate</Label>
-                  <select
-                    className="form-select form-select-md"
-                    aria-label=".form-select-md example"
-                    required
-                  >
-                    <option defaultValue="0">Lahore</option>
-                    <option defaultValue="1">Test 1 City</option>
-                    <option defaultValue="2">Test 2 City</option>
-                    <option defaultValue="3">Test 3 City</option>
-                  </select>
-                </FormGroup>
-              </Col>
-            </Row>
-            <Row>
-              <Col md={6}>
-                <FormGroup>
-                  <Label for="amountViews">Tax Amount</Label>
-                  <Input
-                    id="amount"
-                    name="amount"
-                    placeholder="Enter Amount"
-                  />
-                </FormGroup>
-              </Col>
-              <Col md={6}>
-                <FormGroup>
-                  <Label for="amountViews">Net Amount</Label>
-                  <Input
-                    id="amount"
-                    name="amount"
-                    placeholder="Enter Amount"
-                  />
-                </FormGroup>
-              </Col>
-            </Row>
-            <Row>
-              <Col md={6}>
-                <FormGroup>
-                  <Label for="classViews">Class</Label>
-                  <select
-                    className="form-select form-select-md"
-                    aria-label=".form-select-md example"
-                    required
-                  >
-                    <option defaultValue="0">Lahore</option>
-                    <option defaultValue="1">Test 1 City</option>
-                    <option defaultValue="2">Test 2 City</option>
-                    <option defaultValue="3">Test 3 City</option>
-                  </select>
-                </FormGroup>
-              </Col>
-              <Col md={6}>
-                <FormGroup>
-                  <Label for="classViews">
-                    Select Expense Account{" "}
-                    <span className="text-danger"> *</span>
-                  </Label>
-                  <select
-                    className="form-select form-select-md"
-                    aria-label=".form-select-md example"
-                    required
-                  >
-                    <option defaultValue="0">Lahore</option>
-                    <option defaultValue="1">Test 1 City</option>
-                    <option defaultValue="2">Test 2 City</option>
-                    <option defaultValue="3">Test 3 City</option>
-                  </select>
-                </FormGroup>
-              </Col>
-            </Row>
-            <Row>
-              <Col md={6}>
-                <FormGroup>
-                  <Label for="amountViews">Cheque No#</Label>
-                  <Input id="amount" name="amount" placeholder="Enter Amount" />
-                </FormGroup>
-              </Col>
-              <Col md={6}>
-                <FormGroup>
-                  <Label for="remarksViews">
-                    Remarks<span className="text-danger"> *</span>
-                  </Label>
-                  <Input
-                    id="remarks"
-                    name="remarks *"
-                    placeholder="Enter Remarks"
-                  />
-                </FormGroup>
-              </Col>
-            </Row>
-            <Row>
-              <Col md={6}>
-                <FormGroup>
-                  <Label for="remarksViews">
-                    Amount <span className="text-danger">*</span>
-                  </Label>
-                  <Input
-                    id="remarks *"
-                    name="remarks *"
-                    placeholder="Enter Remarks"
-                  />
-                </FormGroup>
+              {/* <InputLabel shrink htmlFor="bootstrap-input">
+                    Select Expense Account
+                  </InputLabel> */}
+              <TextField
+                  id="outlined-select-currency"
+                  select
+                  label="Select Expense Account" 
+                  size="small"  
+                  value={expenseEditVoucher}
+                  onChange={(e) => setExpenseEditVoucher(e.target.value)}
+                  validators={["required"]}
+                  errorMessages={["this field is required"]}
+                >
+                  {expenseAccount.map((option) => (
+                    <MenuItem key={option.value} value={option.value}>
+                      {option.label}
+                    </MenuItem>
+                  ))}
+                </TextField>
               </Col>
 
               <Col md={6}>
-                <FormGroup>
-                  <Label for="classViews">Select Tax Rate</Label>
-                  <select
-                    className="form-select form-select-md"
-                    aria-label=".form-select-md example"
-                    required
-                  >
-                    <option defaultValue="0">Lahore</option>
-                    <option defaultValue="1">Test 1 City</option>
-                    <option defaultValue="2">Test 2 City</option>
-                    <option defaultValue="3">Test 3 City</option>
-                  </select>
-                </FormGroup>
+                <TextField
+                  type="text"
+                  name="chequeEditVoucher,"
+                  label="Cheque No#"
+                  id="chequeEditVoucher,"
+                  value={chequeEditVoucher}
+                  onChange={(e) => setChequeEditVoucher(e.target.value)}
+                  size="small" 
+                />
               </Col>
-            </Row>
-            <Row>
+
               <Col md={6}>
-                <FormGroup>
-                  <Label for="amountViews">Tax Amount</Label>
-                  <Input id="amount" name="amount" placeholder="Enter Amount" />
-                </FormGroup>
+                <TextField
+                  type="text"
+                  name="remarksEditVoucher,"
+                  label="Remarks"
+                  id="remarksEditVoucher,"
+                  value={remarksEditVoucher}
+                  onChange={(e) => setRemarksEditVoucher(e.target.value)}
+                  validators={["required"]}
+                  errorMessages={["this field is required"]}
+                  size="small" 
+                />
               </Col>
               <Col md={6}>
-                <FormGroup>
-                  <Label for="amountViews">Net Amount</Label>
-                  <Input id="amount" name="amount" placeholder="Enter Amount" />
-                </FormGroup>
+                <TextField
+                  type="text"
+                  name="amountEditVoucher,"
+                  label="Amount"
+                  id="amountEditVoucher,"
+                  value={amountEditVoucher}
+                  onChange={(e) => setAmountEditVoucher(e.target.value)}
+                  validators={["required"]}
+                  errorMessages={["this field is required"]}
+                  size="small" 
+                />
               </Col>
+            <Col md={6}>
+              <TextField
+                  id="outlined-select-currency"
+                  select
+                  label="Select Tax Rate" 
+                  size="small" 
+                  value={taxRateEditVoucher}
+                  onChange={(e) => setTaxRateEditVoucher(e.target.value)}
+                >
+                  {classes.map((option) => (
+                    <MenuItem key={option.value} value={option.value}>
+                      {option.label}
+                    </MenuItem>
+                  ))}
+                </TextField>
+              </Col>
+                <Col md={6}>
+                <TextField
+                  type="text"
+                  name="taxAmountEditVoucher,,"
+                  label="Tax Amount "
+                  id="taxAmountEditVoucher,,"
+                  value={taxAmountEditVoucher}
+                  onChange={(e) => setTaxAmountEditVoucher(e.target.value)}
+                  size="small" 
+                />
+              </Col>
+              <Col md={6}>
+                <TextField
+                  type="text"
+                  name="netAmountEditVoucher, "
+                  label="Net Amount "
+                  id="netAmountEditVoucher, "
+                  value={netAmountEditVoucher}
+                  onChange={(e) => setNetAmountEditVoucher(e.target.value)} 
+                  size="small" 
+                />
+              </Col> 
             </Row>
           </ModalBody>
           <ModalFooter>
-            <div className="hstack gap-2 justify-content-end">
-              <Button
+           <div className="hstack gap-2 justify-content-end">
+          <Button
                 onClick={() => setmodal_list(false)}
                 style={{
                   background: "transparent",
@@ -1220,23 +825,7 @@ const Views = () => {
                   style={{ marginLeft: "10px", }} />
               </Button>
               <Button
-                onClick={() => setmodal_list(false)}
-                style={{
-                  background: "transparent",
-                  borderRadius: "50px",
-                  padding: "5px 25px",
-                  border: "1px solid #FF5652",
-                  color: "#FF5652",
-                }}
-              >
-                Close
-                <img
-                  src={unApproved}
-                  alt="pdfIcon"
-                  style={{ marginLeft: "10px" }}
-                />
-              </Button>
-              <Button
+              type="submit"
                 style={{
                   background: "transparent",
                   borderRadius: "50px",
@@ -1250,31 +839,14 @@ const Views = () => {
                 <img src={paymentprocess} alt="gridIcon"
                   style={{ marginLeft: "10px", height: '20px' }} />
               </Button>
-                style={{
-                  background: "transparent",
-                  borderRadius: "50px",
-                  padding: "5px 25px",
-                  border: "1px solid #0080FF",
-                  margin: "10px",
-                  color: "#0080FF",
-                }}
-              >
-                Update
-                <img
-                  src={paymentprocess}
-                  alt="gridIcon"
-                  style={{ marginLeft: "10px", height: "20px" }}
-                />
-              </Button>
-              {/* <button type="button" className="btn btn-success" id="edit-btn">Update</button> */}
-            </div>
+              </div>  
           </ModalFooter>
-        </form>
+        </ValidatorForm>
       </Modal>
 
       {/* Add Modal */}
       <Modal isOpen={viewAttachmentModal} toggle={() => { attachmentModal(); }} size="lg" centered >
-        <ModalHeader className="bg-light p-3" close={<img src={unApproved} alt="pdfIcon" onClick={() => { setAttachmentModal(false);  }} style={{ cursor: 'pointer' }} />}> Add & Upload Attachment(s) </ModalHeader>
+        <ModalHeader className="bg-light p-3" close={<img src={unApproved} alt="pdfIcon" onClick={() => { setAttachmentModal(false); }} style={{ cursor: 'pointer' }} />}> Add & Upload Attachment(s) </ModalHeader>
         <form className="tablelist-form">
           <ModalBody>
             <Row className="mt-4">
@@ -1291,7 +863,7 @@ const Views = () => {
                             allowMultiple={true}
                             maxFiles={6}
                             name="files"
-                            className="filepond filepond-input-multiple" 
+                            className="filepond filepond-input-multiple"
                           />
                         </Row>
                       </CardBody>
@@ -1304,7 +876,7 @@ const Views = () => {
           <ModalFooter>
             <div className="hstack gap-2 justify-content-end">
               <Button
-                onClick={() => { setAttachmentModal(false);  }}
+                onClick={() => { setAttachmentModal(false); }}
                 style={{
                   background: "transparent",
                   borderRadius: "50px",
@@ -1318,7 +890,7 @@ const Views = () => {
                   style={{ marginLeft: "10px", }} />
               </Button>
               <Button
-              onClick={() => {tog_togFirst(); setAttachmentModal(false);}}
+                onClick={() => { tog_togFirst(); setAttachmentModal(false); }}
                 style={{
                   float: "right",
                   background: "transparent",
@@ -1329,7 +901,7 @@ const Views = () => {
                 }}
               >
                 View Attachments <FaEye />
-              </Button> 
+              </Button>
               <Button
                 style={{
                   float: "right",
@@ -1341,78 +913,78 @@ const Views = () => {
                 }}
               >
                 Upload <FaCloudUploadAlt />
-              </Button>  
-            </div>  
+              </Button>
+            </div>
           </ModalFooter>
         </form>
       </Modal>
 
-      
-<Modal
-    isOpen={modal_togFirst}
-    toggle={() => { tog_togFirst(); }}
-    id="firstmodal"
-    centered  
->
-<ModalHeader className="bg-light p-3" close={<img src={unApproved} alt="pdfIcon"  onClick={() => { setmodal_togFirst(false);  }} style={{ cursor: 'pointer' }} />}>View Attachment</ModalHeader>
- 
-    <ModalBody className="text-center"> 
-        <div className=""> 
-        <Row>
-            <Col xs={6} md={4}>
+
+      <Modal
+        isOpen={modal_togFirst}
+        toggle={() => { tog_togFirst(); }}
+        id="firstmodal"
+        centered
+      >
+        <ModalHeader className="bg-light p-3" close={<img src={unApproved} alt="pdfIcon" onClick={() => { setmodal_togFirst(false); }} style={{ cursor: 'pointer' }} />}>View Attachment</ModalHeader>
+
+        <ModalBody className="text-center">
+          <div className="">
+            <Row>
+              <Col xs={6} md={4}>
                 <img src={user1} alt="user1" style={{ width: '100%', margin: '5px' }} />
-            </Col>
-            <Col xs={6} md={4}>
+              </Col>
+              <Col xs={6} md={4}>
                 <img src={user2} alt="user2" style={{ width: '100%', margin: '5px' }} />
-            </Col>
-            <Col xs={6} md={4}>
+              </Col>
+              <Col xs={6} md={4}>
                 <img src={user3} alt="user3" style={{ width: '100%', margin: '5px' }} />
-            </Col>
-            <Col xs={6} md={4}>
+              </Col>
+              <Col xs={6} md={4}>
                 <img src={user4} alt="user4" style={{ width: '100%', margin: '5px' }} />
-            </Col>
-            <Col xs={6} md={4}>
+              </Col>
+              <Col xs={6} md={4}>
                 <img src={user5} alt="user5" style={{ width: '100%', margin: '5px' }} />
-            </Col>
-            <Col xs={6} md={4}>
+              </Col>
+              <Col xs={6} md={4}>
                 <img src={user6} alt="user6" style={{ width: '100%', margin: '5px' }} />
-            </Col>
-        </Row>
-           
-        </div>
-    </ModalBody>
-    <ModalFooter>
-            <div className="hstack gap-2 justify-content-end">
+              </Col>
+            </Row>
+
+          </div>
+        </ModalBody>
+        <ModalFooter>
+          <div className="hstack gap-2 justify-content-end">
             <Button
-                onClick={() => { tog_togFirst(false); }}
-                style={{
-                  background: "transparent",
-                  borderRadius: "50px",
-                  padding: "5px 23px",
-                  border: "1px solid #FF5652",
-                  color: "#FF5652",
-                }}
-              >
-                Close
-                <img src={unApproved} alt="pdfIcon"
-                  style={{ marginLeft: "10px", }} />
-              </Button>
-              <Button
-               onClick={() => { attachmentModal(); tog_togFirst(false); }}
-                style={{
-                  float: "right",
-                  background: "transparent",
-                  color: "#0A85FF",
-                  borderRadius: "50px",
-                  padding: "5px 23px",
-                  border: "1px solid #00CCCC",
-                }}
-              >
-                ADD <IoMdAddCircleOutline />
-              </Button>   
-            </div>  
-          </ModalFooter>
-</Modal>  
+              onClick={() => { tog_togFirst(false); }}
+              style={{
+                background: "transparent",
+                borderRadius: "50px",
+                padding: "5px 23px",
+                border: "1px solid #FF5652",
+                color: "#FF5652",
+              }}
+            >
+              Close
+              <img src={unApproved} alt="pdfIcon"
+                style={{ marginLeft: "10px", }} />
+            </Button>
+            <Button
+              onClick={() => { attachmentModal(); tog_togFirst(false); }}
+              style={{
+                float: "right",
+                background: "transparent",
+                color: "#0A85FF",
+                borderRadius: "50px",
+                padding: "5px 23px",
+                border: "1px solid #00CCCC",
+              }}
+            >
+              ADD <IoMdAddCircleOutline />
+            </Button>
+          </div>
+        </ModalFooter>
+      </Modal>
     </React.Fragment>
   );
 };
