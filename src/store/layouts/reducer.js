@@ -45,6 +45,7 @@ const INIT_STATE = {
 };
 
 const Layout = (state = INIT_STATE, action) => {
+  console.log(action);
   switch (action.type) {
     case CHANGE_LAYOUT:
       return {
