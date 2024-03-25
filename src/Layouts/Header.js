@@ -85,7 +85,7 @@ const Header = ({ onChangeLayoutMode, layoutModeType, headerClass }) => {
                                 </Link>
                             </div>
 
-                            <button
+                            {/* <button
                                 onClick={toogleMenuBtn}
                                 type="button"
                                 className="btn btn-sm px-3 fs-16 header-item vertical-menu-btn topnav-hamburger"
@@ -95,7 +95,7 @@ const Header = ({ onChangeLayoutMode, layoutModeType, headerClass }) => {
                                     <span></span>
                                     <span></span>
                                 </span>
-                            </button>
+                            </button> */}
 
 
                             <SearchOption />

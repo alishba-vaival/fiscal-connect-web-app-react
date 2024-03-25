@@ -120,7 +120,7 @@
     height: $header-height;
     display: flex;
     align-items: center;
-}
+    }
 
 .header-profile-user {
     height: 32px;
@@ -254,11 +254,12 @@
         }
     }
 
-    .hamburger-icon {
-        span {
-            background-color: $gray-300;
-        }
-    }
+    // .hamburger-icon {
+
+    //     span {
+    //         background-color: $gray-300;
+    //     }
+    // }
 }
 
 @media (max-width: 600px) {

@@ -54,9 +54,9 @@ const authProtectedRoutes = [
   {
     path: "/",
     exact: true,
-    component: <Navigate to="/dashboard" />,
+    component: <Navigate to="/login" />,
   },
-  { path: "*", component: <Navigate to="/dashboard" /> },
+  { path: "*", component: <Navigate to="/login" /> },
   { path: "/homepage", component: <Navigate to="/homepage" /> },
   { path: "/cashExpense", component: <Navigate to="/cashExpense" /> },
   { path: "/bankExpense", component: <Navigate to="/bankExpense" /> },

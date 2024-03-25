@@ -8,9 +8,9 @@ import logoLight from "../assets/images/figma/fiscalConnectLogo.svg";
 
 //Import Components
 import VerticalLayout from "./VerticalLayouts";
-import TwoColumnLayout from "./TwoColumnLayout";
+// import TwoColumnLayout from "./TwoColumnLayout";
 import { Container } from "reactstrap";
-import HorizontalLayout from "./HorizontalLayout";
+// import HorizontalLayout from "./HorizontalLayout";
 
 const Sidebar = ({ layoutType }) => {
 
@@ -64,7 +64,7 @@ const Sidebar = ({ layoutType }) => {
             <i className="ri-record-circle-line"></i>
           </button>
         </div>
-        {layoutType === "horizontal" ? (
+        {/* {layoutType === "horizontal" ? (
           <div id="scrollbar">
             <Container fluid>
               <div id="two-column-menu"></div>
@@ -73,24 +73,26 @@ const Sidebar = ({ layoutType }) => {
               </ul>
             </Container>
           </div>
-        ) : layoutType === 'twocolumn' ? (
-          <React.Fragment>
-            <TwoColumnLayout layoutType={layoutType} />
-            <div className="sidebar-background"></div>
-          </React.Fragment>
-        ) : (
+        )  */}
+        {/* // : layoutType === 'twocolumn' ? (
+        //   <React.Fragment>
+        //     <TwoColumnLayout layoutType={layoutType} />
+        //     <div className="sidebar-background"></div>
+        //   </React.Fragment>
+        // ) 
+        // : ( */}
           <React.Fragment>
             <SimpleBar id="scrollbar" className="h-100">
               <Container fluid>
                 <div id="two-column-menu"></div>
                 <ul className="navbar-nav" id="navbar-nav">
-                  <VerticalLayout layoutType={layoutType} />
+                  <VerticalLayout />
                 </ul>
               </Container>
             </SimpleBar>
             <div className="sidebar-background"></div>
           </React.Fragment>
-        )}
+        {/* // )} */}
       </div>
       <div className="vertical-overlay"></div>
     </React.Fragment>

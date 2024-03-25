@@ -40,11 +40,12 @@ const CoverSignIn = () => {
 
     //   const { login } = useAuth();
 
-    const handleFormSubmit = async () => {
+    const handleFormSubmit = async (values) => {
         setLoading(true);
-        try {
-            //   await login(values.email, values.password);
-            navigate("/");
+        try { 
+            console.log(values); 
+            // await login(values.email, values.password);
+            navigate("/homepage");
         } catch (e) {
             setLoading(false);
         }

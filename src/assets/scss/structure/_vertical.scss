@@ -200,82 +200,82 @@
     }
 }
 
-.hamburger-icon {
-    width: 20px;
-    height: 14px;
-    position: relative;
-    cursor: pointer;
-    display: inline-block;
+// .hamburger-icon {
+//     width: 20px;
+//     height: 14px;
+//     position: relative;
+//     cursor: pointer;
+//     display: inline-block;
 
-    span {
-        background-color: $text-muted;
-        position: absolute;
-        border-radius: 2px;
-        transition: .3s cubic-bezier(.8, .5, .2, 1.4);
-        width: 100%;
-        height: 2px;
-        display: block;
-        left: 0px;
+//     span {
+//         background-color: $text-muted;
+//         position: absolute;
+//         border-radius: 2px;
+//         transition: .3s cubic-bezier(.8, .5, .2, 1.4);
+//         width: 100%;
+//         height: 2px;
+//         display: block;
+//         left: 0px;
 
-        &:nth-child(1) {
-            top: 0;
-            width: 80%;
-        }
+//         &:nth-child(1) {
+//             top: 0;
+//             width: 80%;
+//         }
 
-        &:nth-child(2) {
-            top: 6px;
-        }
+//         &:nth-child(2) {
+//             top: 6px;
+//         }
 
-        &:nth-child(3) {
-            bottom: 0;
-            width: 60%;
-        }
-    }
+//         &:nth-child(3) {
+//             bottom: 0;
+//             width: 60%;
+//         }
+//     }
 
-    .vertical-menu-btn:hover &:not(.open) {
-        span {
+//     .vertical-menu-btn:hover &:not(.open) {
+//         span {
 
-            &:nth-child(1) {
-                top: -1px;
-            }
+//             &:nth-child(1) {
+//                 top: -1px;
+//             }
 
-            &:nth-child(3) {
-                bottom: -1px;
-            }
-        }
-    }
+//             &:nth-child(3) {
+//                 bottom: -1px;
+//             }
+//         }
+//     }
 
-    &.open {
-        transform: rotate(-90deg);
+//     &.open {
+//         transform: rotate(-90deg);
 
-        span {
+//         span {
 
-            &:nth-child(1) {
-                left: 1px;
-                top: 5px;
-                width: 20px;
-                transform: rotate(90deg);
-                transition-delay: 150ms;
-            }
+//             &:nth-child(1) {
+//                 left: 1px;
+//                 top: 5px;
+//                 width: 20px;
+//                 transform: rotate(90deg);
+//                 transition-delay: 150ms;
+//             }
 
-            &:nth-child(2) {
-                left: 3px;
-                top: 13px;
-                width: 10px;
-                transform: rotate(45deg);
-                transition-delay: 50ms;
-            }
+//             &:nth-child(2) {
+//                 left: 3px;
+//                 top: 13px;
+//                 width: 10px;
+//                 transform: rotate(45deg);
+//                 transition-delay: 50ms;
+//             }
 
-            &:nth-child(3) {
-                left: 9px;
-                top: 13px;
-                width: 10px;
-                transform: rotate(-45deg);
-                transition-delay: 100ms;
-            }
-        }
-    }
-}
+//             &:nth-child(3) {
+//                 left: 9px;
+//                 top: 13px;
+//                 width: 10px;
+//                 transform: rotate(-45deg);
+//                 transition-delay: 100ms;
+//             }
+//         }
+//     }
+// }
 
 .logo {
     line-height: $header-height;
@@ -760,11 +760,11 @@
             background: $vertical-menu-bg-dark;
             border-right: 1px solid $vertical-menu-border-dark;
 
-            .hamburger-icon {
-                span {
-                    background-color: $vertical-menu-item-color-dark;
-                }
-            }
+            // .hamburger-icon {
+            //     span {
+            //         background-color: $vertical-menu-item-color-dark;
+            //     }
+            // }
 
             .btn-vertical-sm-hover {
                 color: $vertical-menu-item-color-dark;
@@ -1088,11 +1088,11 @@
         background: $vertical-menu-bg-gradient;
         border-right: 1px solid $vertical-menu-border-gradient;
 
-        .hamburger-icon {
-            span {
-                background-color: $vertical-menu-item-color-gradient;
-            }
-        }
+        // .hamburger-icon {
+        //     span {
+        //         background-color: $vertical-menu-item-color-gradient;
+        //     }
+        // }
 
         .btn-vertical-sm-hover {
             color: $vertical-menu-item-color-gradient;
