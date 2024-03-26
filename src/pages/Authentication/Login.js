@@ -32,7 +32,7 @@ const validationSchema = Yup.object().shape({
 });
 
 const CoverSignIn = () => {
-    document.title = "Cover SignIn | Velzon - React Admin & Dashboard Template";
+    document.title = "Login | Fiscal Connect";
 
     const theme = useTheme();
     const navigate = useNavigate();

@@ -8,6 +8,7 @@ import receipt from "../../assets/images/figma/receipt.svg";
 import createVoucher from "../../assets/images/figma/createVoucher.svg";
 import other from "../../assets/images/figma/other.svg";
 import views from "../../assets/images/figma/Views.svg";
+import dashboard from "../../assets/images/figma/dashboard.svg";
 import "./Homepage.scss";
 
 const useNavigateTo = (path) => {
@@ -23,6 +24,7 @@ const HomePage = () => {
   const navigateToCreateVoucher = useNavigateTo("/createVoucher");
   const navigateToOther = useNavigateTo("/other");
   const navigateToViews = useNavigateTo("/views");
+  const navigateToDashboard= useNavigateTo("/dashboard");
 
   return (
     <React.Fragment>
@@ -30,6 +32,26 @@ const HomePage = () => {
         <BreadCrumb title="Homepage" pageTitle="Home" />
         <Container fluid className="homeContainer">
           <Row className="justify-content-center">
+            <Col
+              xs="11"
+              md="5"
+              lg="3"
+              xl="2"
+              className="d-flex justify-content-center"
+            >
+              <Card body className="homeCard" onClick={navigateToDashboard}>
+                <CardTitle
+                  tag="h5"
+                  className="homeCardTitle"
+                  style={{
+                    backgroundColor: "#FFF9F2",
+                  }}
+                >
+                  <img alt="Dashboard" src={dashboard} width="100%" />
+                </CardTitle>
+                <Button className="homeBtn">Dashboard</Button>
+              </Card>
+            </Col>
             <Col
               xs="11"
               md="5"
@@ -90,7 +112,10 @@ const HomePage = () => {
                 <Button className="homeBtn">Receipt</Button>
               </Card>
             </Col>
-            <Col
+            
+          </Row>
+          <Row className="justify-content-center">
+          <Col
               xs="11"
               md="5"
               lg="3"
@@ -110,8 +135,6 @@ const HomePage = () => {
                 <Button className="homeBtn">Other</Button>
               </Card>
             </Col>
-          </Row>
-          <Row className="justify-content-center">
             <Col
               xs="11"
               md="5"
